@@ -7,7 +7,7 @@ Date: 12 October 2026 · supported scaffold runtime: Node 24.19.0 on Windows x64
 - `npm run check` passes: strict typechecking of application/scripts/tests, 12 behavioral and controlled-stream keyboard tests, CLI compilation and deterministic generation of 16 workflow sketches.
 - The tests cover a complete empty-library fixture journey, note-based retrieval, draft retention on back/cancel/failure, both duplicate choices, stale completion events after cancellation, invalid/credential/control-character URLs, combined metadata search, format/collection preview, help, collection keyboard shortcut, resize to 40 columns and controlled raw-input cleanup on exit.
 - `npm install` audited 51 packages and reported zero known vulnerabilities at installation time. This is a dated package audit, not a product-security claim. Dependency licenses and direct versions were checked against installed metadata.
-- Browser review checks the original gallery, duplicate/failure/empty states, theme switching, small-screen wrapping and keyboard-focus indication. It verifies the review artifact only, not the real terminal's assistive behavior.
+- Browser review checked the original gallery, duplicate/failure/empty states, theme switching, small-screen wrapping and keyboard-focus indication. At a 375 px viewport the document width was 360 px (scrollbar accounted for) with no horizontal overflow; all 16 sketches were available. It verifies the review artifact only, not the real terminal's assistive behavior.
 - A fresh-reader documentation review checked audience, release boundary, current implementation, cancellation, persistence/recovery, import and provenance. Resolved findings: specify the non-interruptible commit boundary; supply extractor identity through the inspect contract; require positive completed-file bytes; distinguish P0 manual restoration guidance from P1 verified relinking.
 
 ## Baseline and provisional targets
@@ -25,3 +25,5 @@ After observing this baseline, set provisional targets: snapshot-startup median 
 No permitted media was downloaded. No real downloader, filesystem verification/hash, safe promotion, atomic JSON writer, import/export, settings persistence or operating-system open action is implemented. No actual Windows Terminal restoration or network-source reliability claim is made. User interviews remain pending by the phase 1 gate's explicit allowance. Production and beta checks belong to phase 3/4.
 
 The GitHub upload, commit comparison, issue URLs and Actions result are recorded separately in [execution status](execution-status.md).
+
+Windows CI passed on source-scaffold commit `ba6b94e6047cc42363e5c093b6bb0d1338aa77a6`: [verified run](https://github.com/JustinReyes28/sourcespool/actions/runs/38240281859).

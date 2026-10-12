@@ -2,7 +2,7 @@
 
 A Windows-first terminal tool for keeping a small media reference collection with its source, tags, notes and predictable folders.
 
-**Current status: Plan 1 complete; Plan 2 design scaffold under verification.** This repository contains an original React/Ink walkthrough, product/design/storage decisions and the next build milestones. It does not yet download media or persist a real catalogue. All demo items, hashes and completion states are synthetic.
+**Current status: Plans 1 and 2 complete.** This repository contains an original React/Ink walkthrough, product/design/storage decisions and the next build milestones. It does not yet download media or persist a real catalogue. All demo items, hashes and completion states are synthetic. [Verified public repository](https://github.com/JustinReyes28/sourcespool).
 
 ## Review the design
 
@@ -63,7 +63,7 @@ The scaffold downloads no media and invokes no external downloader. It installs 
 4. [Plan 4 — validate and release](PLAN-04-Validation-and-GitHub-Release.md)
 5. [Plan 5 — market and maintain](PLAN-05-Marketing-and-Maintenance.md)
 
-The four next implementation issues are prepared in [docs/issues](docs/issues). Human interviews remain explicitly pending; no observations or quotations are invented. There is no production release or npm package yet; `private: true` prevents accidental registry publication.
+The four next implementation issues are [published on GitHub](https://github.com/JustinReyes28/sourcespool/issues), with their reviewable bodies retained in [docs/issues](docs/issues). Human interviews remain explicitly pending; no observations or quotations are invented. There is no production release or npm package yet; `private: true` prevents accidental registry publication.
 
 ## Credits and license
 

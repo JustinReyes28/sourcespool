@@ -2,7 +2,7 @@
 
 Inspiration: Yoinks. Prepared 12 October 2026 (Asia/Singapore).
 
-This folder contains the five phase files for this project, from product definition through implementation, GitHub publishing, Reddit/X/LinkedIn marketing using browser computer use, and maintenance. This is the roadmap for SourceSpool. The folder now also contains an early design prototype; the README describes its current status. Public GitHub release remains a future milestone.
+This folder contains the five phase files for this project, from product definition through implementation, GitHub publishing, Reddit/X/LinkedIn marketing using browser computer use, and maintenance. Plans 1 and 2 are complete; see [current evidence](docs/execution-status.md) and the [verified public repository](https://github.com/JustinReyes28/sourcespool). The folder contains an early design prototype; the README describes its limits. Production build, public release and marketing remain phases 3–5.
 
 [Repository inspiration](Repo-Inspiration-2026-10-12.md) · [Public README](README.md) · [Reference notes](INSPIRATION-REFERENCE.md)
 
