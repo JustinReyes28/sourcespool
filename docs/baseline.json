@@ -1,0 +1,56 @@
+{
+  "measuredAt": "2026-10-12T10:53:19.264Z",
+  "hostLabel": "SourceSpool development host (Windows x64; no hostname or user paths exported)",
+  "environment": {
+    "platform": "win32",
+    "osRelease": "10.0.26200",
+    "arch": "x64",
+    "node": "v24.19.0",
+    "cpu": "11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz",
+    "memoryGiB": 15.7
+  },
+  "startup": {
+    "metric": "new process to fixture home snapshot, not interactive first paint",
+    "samples": 7,
+    "medianMs": 620.126,
+    "maxMs": 944.9,
+    "rawMs": [
+      627.574,
+      573.499,
+      572.498,
+      578.019,
+      620.126,
+      724.338,
+      944.9
+    ]
+  },
+  "search": {
+    "metric": "in-memory metadata query on 1000 synthetic records, no disk or render",
+    "samples": 100,
+    "medianMs": 0.852,
+    "p95Ms": 1.255
+  },
+  "footprint": {
+    "dependencies": {
+      "bytes": 55620178,
+      "files": 5688
+    },
+    "build": {
+      "bytes": 48556,
+      "files": 21
+    },
+    "excludes": [
+      "Node runtime",
+      "npm cache",
+      "yt-dlp",
+      "ffmpeg",
+      "media files"
+    ]
+  },
+  "provisionalTargets": {
+    "startupMedianMs": 1500,
+    "searchP95Ms": 50,
+    "installedScaffoldMiB": 100,
+    "productionValidation": "Re-measure with real JSON catalogue, interactive TTY, pinned external tools and file I/O in phase 3."
+  }
+}
