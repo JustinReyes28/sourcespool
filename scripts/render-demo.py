@@ -27,7 +27,16 @@ def render(frame, theme='dark'):
     if len(wrapped) > 21:
         raise RuntimeError(f"Frame {frame['name']} does not fit: {len(wrapped)} lines")
     for index, line in enumerate(wrapped):
-        draw.text((40, 124 + 23 * index), line, fill=fg, font=font)
+        # Consolas in this capture environment lacks U+258F. Render its intended
+        # narrow insertion bar directly rather than publishing a missing-glyph box.
+        x, y = 40, 124 + 23 * index
+        parts = line.split('▏')
+        for part_index, part in enumerate(parts):
+            draw.text((x, y), part, fill=fg, font=font)
+            x += draw.textlength(part, font=font)
+            if part_index < len(parts) - 1:
+                draw.rectangle((x, y + 3, x + 1, y + 20), fill=fg)
+                x += draw.textlength(' ', font=font)
     draw.line((40, 650, 1240, 650), fill=stroke, width=1)
     draw.text((40, 670), 'Captured production Ink text • original generated media • local HTTP • paths redacted', fill=muted, font=small)
     return image
