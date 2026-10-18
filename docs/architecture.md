@@ -20,7 +20,7 @@ The prototype intentionally imports fixtures in the design simulator. Production
 
 ## Runtime and dependencies
 
-Initial support target: Windows 11 x64, PowerShell/Windows Terminal, local NTFS storage, **Node 24.19.0**. The bundled Node 24.19.0 runtime is used for scaffold verification; the system Node 25 is outside the pinned support range. CI uses Windows with the same Node version. Do not broaden operating-system claims from dependency portability alone.
+Runtime support: Windows 11 x64, PowerShell/Windows Terminal, local NTFS storage and **Node 22 or newer**. Ink and several terminal dependencies set the minimum at Node 22. Node 24.19.0 remains the pinned development runtime; the startup guard accepts newer Node majors. Windows CI checks Node 22.0.0, 24.19.0, 25.2.1 and the latest Node 26 release. Do not broaden operating-system claims from dependency portability alone.
 
 React 19.3.0, Ink 8.0.0, TypeScript 7.0.2 and tsx 4.23.15 are pinned, with the lockfile recording transitive versions. The build uses tsc without a bundler. `private: true` prevents accidental npm publication while allowing the explicitly requested public GitHub repository. The production adapter checks executable paths/version output and reports missing tools. Tested versions are yt-dlp 2026.08.19 and FFmpeg 9.0.2 Essentials; see tool-provenance.md.
 

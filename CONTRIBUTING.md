@@ -1,6 +1,6 @@
 # Contributing
 
-SourceSpool supports Windows 11 x64, local NTFS storage and Node >=24.19.0 <25.
+SourceSpool supports Windows 11 x64, local NTFS storage and Node >=22.0.0. Node 24 LTS is recommended for development; `.node-version` and `.nvmrc` pin the reproducible development runtime. Windows CI checks Node 22.0.0, 24.19.0, 25.2.1 and the latest Node 26 release.
 
 Run `npm ci` and `npm run check`. Real-media validation additionally requires installed yt-dlp, FFmpeg and ffprobe. Set paths to your own installed tools, then run:
 

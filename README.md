@@ -8,7 +8,7 @@ Save video and audio references with their source links, collections, tags and n
 
 ## Install and start
 
-Requires **Windows 11 x64**, **local NTFS storage** and **Node 24.19.0 or a later Node 24 release** (below Node 25). Install [Node 24](https://nodejs.org/en/download) first.
+Requires **Windows 11 x64**, **local NTFS storage** and **Node 22 or newer**. [Node 24 LTS](https://nodejs.org/en/download) is recommended; newer Node versions are no longer blocked at startup.
 
 ~~~powershell
 npx sourcespool@latest
@@ -22,6 +22,8 @@ sourcespool
 ~~~
 
 Already installed? [Update to the latest release](#update).
+
+Version **0.2.1** removes the Node 24-only restriction in 0.2.0, so Node 25 users can launch normally. Update an existing installation with `npm install -g sourcespool@latest`.
 
 First launch checks for yt-dlp, FFmpeg and ffprobe. If they are missing, it offers guided setup and asks before downloading them. You then choose and confirm a library folder; SourceSpool remembers it.
 

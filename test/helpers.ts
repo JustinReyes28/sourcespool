@@ -14,7 +14,7 @@ export async function temporaryLibrary(hooks: LibraryHooks = {}) {
   return { library, directory, async cleanup() {
     const relative = path.relative(base, path.resolve(directory));
     if (!relative || relative.startsWith('..') || path.isAbsolute(relative) || (await fs.lstat(directory)).isSymbolicLink()) throw new Error('Unsafe test cleanup target');
-    await fs.rm(directory, { recursive: true, force: true });
+    await fs.rm(directory, { recursive: true, force: true, maxRetries: 3, retryDelay: 100 });
   } };
 }
 export const metadata = (url = 'https://example.org/reference.mp4'): Metadata => ({ sourceUrl: url, extractor: 'test', sourceId: url, title: 'Rain reflections 雨', formats: [{ id: 'mp4', extension: 'mp4', label: 'Video · MP4' }] });
