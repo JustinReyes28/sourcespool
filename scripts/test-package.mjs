@@ -26,7 +26,10 @@ await npm(['install', '-g', tarball, '--prefix', prefix, '--ignore-scripts', '--
 const cli = path.join(prefix, 'node_modules', 'sourcespool', 'dist', 'cli.js');
 const execute = async args => (await run(process.execPath, [cli, ...args], { cwd, env })).stdout;
 assert.match(await execute(['--help']), /--tool-cache/); assert.match(await execute(['--version']), new RegExp(packed.version.replaceAll('.', '\\.')));
-await fs.access(path.join(prefix, 'sourcespool.cmd'));
+const shim = path.join(prefix, 'sourcespool.cmd'); await fs.access(shim);
+const shell = path.join(process.env.SystemRoot ?? 'C:/Windows', 'System32/WindowsPowerShell/v1.0/powershell.exe');
+const shimResult = await run(shell, ['-NoLogo', '-NoProfile', '-Command', '& $env:SOURCESPOOL_TEST_SHIM --version; exit $LASTEXITCODE'], { cwd, env: { ...env, SOURCESPOOL_TEST_SHIM: shim } });
+assert.ok(shimResult.stdout.includes('SourceSpool ' + packed.version));
 await assert.rejects(run(process.execPath, [cli, '--not-an-option'], { cwd, env }), e => e.code === 1 && /Unknown option/.test(e.stderr));
 assert.equal(await fs.stat(env.LOCALAPPDATA).then(() => true, () => false), false, 'help/version must not write user data');
 let installedMedia = null;
@@ -35,6 +38,7 @@ if (registryPackage) {
   const requestedVersion = registryPackage.slice(registryPackage.lastIndexOf('@') + 1);
   assert.ok((await npm(['exec', '--yes', '--package', registryPackage, '--', 'sourcespool', '--version'])).includes('SourceSpool ' + requestedVersion));
   await npm(['install', '-g', registryPackage, '--prefix', prefix, '--ignore-scripts', '--no-audit', '--no-fund']);
+  assert.ok((await execute(['--version'])).includes('SourceSpool ' + requestedVersion));
 } else {
   await npm(['exec', '--yes', ...network, '--package', tarball, '--', 'sourcespool', '--version']);
 }

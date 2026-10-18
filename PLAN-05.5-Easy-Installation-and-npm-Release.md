@@ -134,12 +134,12 @@ Acceptance: updated README, posting-kit guide, all four caption files and a chec
 
 ## Completion gate and planning status
 
-- [ ] npm destination, name and owner publishing access verified; exact public commands finalized.
-- [ ] Minimal compiled package and command shim verified outside the source tree.
-- [ ] Guided, verified, per-user tool setup works and recovers from failures.
-- [ ] First-run, diagnostics, update/uninstall and existing-library flows qualified.
-- [ ] Existing npm/tool downloads reused and verified; offline/local-artifact checks, hosted fresh-download checks and the local cellular-transfer record complete.
-- [ ] Installed-artifact CI, real Windows terminal checks and installation evidence complete.
+- [x] npm destination, name and owner publishing access verified; exact public commands finalized.
+- [x] Minimal compiled package and command shim verified outside the source tree.
+- [x] Guided, verified, per-user tool setup works and recovers from failures.
+- [x] First-run, diagnostics, update/uninstall and existing-library flows qualified.
+- [x] Existing npm/tool downloads reused and verified; offline/local-artifact checks, hosted fresh-download checks and the local cellular-transfer record complete.
+- [x] Installed-artifact CI, real Windows terminal checks and installation evidence complete.
 - [ ] Stable npm publication and clean registry installations verified; GitHub/README links updated.
 - [ ] Release documentation, posting-kit guide, all four social captions and a checked versioned ZIP updated and delivered to the owner.
 

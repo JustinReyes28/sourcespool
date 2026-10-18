@@ -1,7 +1,29 @@
 # Phase 5.5 installation evidence
 
-Status: implementation and release qualification in progress on 18 October 2026. Public npm publication and hosted clean-install results are not yet claimed.
+Status: implementation and local qualification complete; stable publication and final public-registry verification are pending. [Draft PR #5](https://github.com/JustinReyes28/ClipShelf/pull/5) contains the reviewable work. [Structured evidence](installation-phase-5.5.json) records the exact scope and artifact digest.
 
-The current candidate is 0.2.0-rc.1. Local Windows 11 x64 / Node 24.19.0 checks passed 41 behavior/integration cases, including verified cache setup, cancellation, repair and original loopback media. An isolated offline packed-package check passed global installation, npx, disabled lifecycle scripts, tool setup, repeat setup, uninstall/reinstall and settings preservation. These initial results precede final release qualification; final artifact hashes and hosted results will be recorded here.
+## Local Windows qualification
 
-Local tools were reused from .tmp/tools and npm packages from .npm-cache. No external tool download was performed on this PC.
+Windows 11 x64 build 26200, Node 24.19.0 and npm 11.6.2. Required type/build/gallery checks and all 35 behavior/setup tests passed. All six original-media, merge, process-cancellation and forced-crash integration cases passed. The installed-package smoke test also saved and hashed an original loopback sample, found its note, kept a duplicate, exported metadata and merged separate audio/video streams.
+
+The stable candidate is **0.2.0**, **38,921 bytes**, SHA-256 **cf77cc31330cb9c48706ac85c1c3421a26d95fefccd3ee718bb5e3e957a7537e**. Its 22-file allowlist contains compiled runtime code, package metadata, README, license and tool provenance; no tools, caches, tests or development dependencies. Full tool/media qualification and the corrected external-directory global/npx check produced identical artifact bytes.
+
+A library and settings fixture created through the retained v0.1.0 implementation opened in the installed candidate and survived offline uninstall/reinstall with catalogue bytes, settings and media hash unchanged. No personal library was used.
+
+Actual PowerShell/ConPTY checks covered setup decline, explicit cached setup, library selection/confirmation, remembered reopening and Q/Ctrl+C exits. A genuinely write-denied temporary working directory passed help and dependency checks; its original ACL was restored. Node 25.2.1 was rejected. Linux/arm64 process-configuration simulations exercised the runtime support message; they do not qualify a foreign OS/CPU. npm 11.6.2 did not reject a global --os=linux override, so support enforcement relies on the runtime guard as well as declared metadata.
+
+## Hosted and public qualification
+
+[Initial clean-host qualification](https://github.com/JustinReyes28/ClipShelf/actions/runs/39110411381) and [installed-media qualification](https://github.com/JustinReyes28/ClipShelf/actions/runs/39111023262) passed. The latter's candidate artifact SHA-256 exactly matched the local prerelease. The hosted OS build 26100 is recorded separately from local Windows 11.
+
+The first public-registry npx check exposed that the temporary test directory was still nested under the source checkout, allowing npm's ancestor-package discovery to interfere. The test now uses the operating-system temporary directory outside the repository and checks the requested public version explicitly. [Corrected public-prerelease check](https://github.com/JustinReyes28/ClipShelf/actions/runs/39111967649) and [stable-candidate check](https://github.com/JustinReyes28/ClipShelf/actions/runs/39111970764) both passed. The corrected public check installed the prerelease from the registry and exercised its real tool/media workflow outside the source checkout.
+
+The prerelease upload was accepted after owner-controlled npm 2FA/browser authentication. Public metadata for 0.2.0-rc.1 is readable and its SHA-512 integrity matches the tested 38,900-byte artifact. npm initially assigned both next and latest to this first version; stable publication must set latest to 0.2.0. The 0.2.0 stable upload has been accepted; registry processing and final public-version qualification are pending. The GitHub release has not yet been published.
+
+## Cellular data and posting handoff
+
+Reused all 41 cached runtime tarballs (1,569,551 compressed bytes), yt-dlp (17,840,399 bytes), FFmpeg ZIP (114,768,076 bytes), and existing original demo media/images. **No external tool binaries were downloaded on this PC.** Fresh tool/dependency downloads ran on hosted Windows runners. Package publication payloads are about 39 KB each, plus registry/transport metadata; the checked posting-kit draft is 475,147 bytes.
+
+No carrier byte counter was captured, so the precise total cellular transfer is unmeasured. The suggested 50 MB allowance remains a planning figure, excluding ChatGPT/app traffic and unrelated updates. Keep caches and test artifacts for reproducibility; no cache purge or bulk local redownload was performed.
+
+All four release captions and the complete guide are prepared under [unpublished drafts](launch-kit/draft-v0.2.0/README.md). The ZIP builder checks all internal links, CRCs, file hashes, seven reused PNGs and X's 211-character weighted length. Promote the current posting files and build the final versioned ZIP only after the stable release is verified. The owner publishes social posts independently.
