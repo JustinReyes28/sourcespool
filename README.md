@@ -21,6 +21,8 @@ npm install -g sourcespool
 sourcespool
 ~~~
 
+Already installed? [Update to the latest release](#update).
+
 First launch checks for yt-dlp, FFmpeg and ffprobe. If they are missing, it offers guided setup and asks before downloading them. You then choose and confirm a library folder; SourceSpool remembers it.
 
 Tool setup needs about **133 MB of downloads** and **800 MB of free disk space**. Working tools can be reused. [Manual paths, offline setup and troubleshooting](docs/installation.md).
@@ -38,15 +40,30 @@ Tool setup needs about **133 MB of downloads** and **800 MB of free disk space**
 
 The [demo](docs/demo/README.md) shows a real save, note search, duplicate choice and metadata export using an original local sample.
 
-## Update or uninstall
+## Update
+
+Updates are manual. To update a permanent installation to the latest published npm release, close SourceSpool and run:
 
 ~~~powershell
 npm install -g sourcespool@latest
 sourcespool --version
+~~~
+
+Your settings, managed tools and media library are preserved. Existing v0.1.0 libraries remain compatible.
+
+If you use SourceSpool without a permanent installation, launch the latest published release with:
+
+~~~powershell
+npx sourcespool@latest
+~~~
+
+## Uninstall
+
+~~~powershell
 npm uninstall -g sourcespool
 ~~~
 
-You can also run the latest version with `npx sourcespool@latest`. Settings, managed tools and your separate media library survive uninstall. Existing v0.1.0 libraries remain compatible.
+Uninstalling removes the CLI package. Your settings, managed tools and media library are preserved.
 
 ## Storage and limitations
 
