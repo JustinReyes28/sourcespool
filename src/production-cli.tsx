@@ -30,7 +30,7 @@ npx sourcespool                        Run the published package
 --help                                 Show help
 --version                              Show version
 
-Windows 11 x64 / Node 24.19.0. Tested tools: yt-dlp 2026.08.19 / FFmpeg 9.0.2.
+Windows 11 x64 / Node 22 or newer (Node 24 LTS recommended). Tested tools: yt-dlp 2026.08.19 / FFmpeg 9.0.2.
 Tools download only after an explicit install choice (~133 MB). Cached files are reused.
 Update: npm install -g sourcespool@latest; remove: npm uninstall -g sourcespool.
 Settings/tools and your separate media library survive uninstall. Exports contain metadata.`;
@@ -39,7 +39,7 @@ export async function runProduction(args: string[], options: { onFirstPaint?: (c
   if (args.includes('--version')) { console.log('SourceSpool ' + appVersion); return; }
   const allowed = new Set(['--library', '--yt-dlp', '--ffmpeg', '--remember', '--check-tools', '--setup', '--tool-cache', '--download-tools', '--repair']);
   for (let i = 0; i < args.length; i++) { if (!allowed.has(args[i]!)) throw new UserError(`Unknown option: ${args[i]}. Use --help.`); if (['--library', '--yt-dlp', '--ffmpeg', '--tool-cache'].includes(args[i]!)) { if (!args[i + 1] || args[i + 1]!.startsWith('--')) throw new UserError(`Missing value for ${args[i]}.`); i++; } }
-  if (!/^24\./.test(process.versions.node) || Number(process.versions.node.split('.')[1]) < 19) throw new UserError('Use supported Node 24.19.0 or a later Node 24 patch. Node 25 is outside the tested support range.');
+  if (Number(process.versions.node.split('.')[0]) < 22) throw new UserError(`SourceSpool requires Node 22 or newer; found Node ${process.versions.node}. Install Node 24 LTS or a newer supported release.`);
   if (process.platform !== 'win32' || process.arch !== 'x64') throw new UserError('This release supports Windows 11 x64 with local NTFS storage.');
   const option = (name: string) => { const index = args.indexOf(name); return index < 0 ? undefined : args[index + 1]; };
   let saved = null;

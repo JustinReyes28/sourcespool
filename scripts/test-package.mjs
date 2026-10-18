@@ -31,6 +31,7 @@ const shell = path.join(process.env.SystemRoot ?? 'C:/Windows', 'System32/Window
 const shimResult = await run(shell, ['-NoLogo', '-NoProfile', '-Command', '& $env:SOURCESPOOL_TEST_SHIM --version; exit $LASTEXITCODE'], { cwd, env: { ...env, SOURCESPOOL_TEST_SHIM: shim } });
 assert.ok(shimResult.stdout.includes('SourceSpool ' + packed.version));
 await assert.rejects(run(process.execPath, [cli, '--not-an-option'], { cwd, env }), e => e.code === 1 && /Unknown option/.test(e.stderr));
+await assert.rejects(run(process.execPath, [cli, '--setup', '--check-tools'], { cwd, env }), e => e.code === 1 && /Choose --setup or --check-tools/.test(e.stderr), 'installed production startup must accept the current Node runtime');
 assert.equal(await fs.stat(path.join(env.LOCALAPPDATA, 'SourceSpool')).then(() => true, () => false), false, 'help/version must not create SourceSpool user data');
 let installedMedia = null;
 const registryPackage = process.env.SOURCESPOOL_REGISTRY_PACKAGE;

@@ -1,6 +1,27 @@
 # Installation and troubleshooting
 
-Requires Windows 11 x64, a local NTFS library folder and Node >=24.19.0 <25. Install [Node 24](https://nodejs.org/en/download), then run `npx sourcespool@latest` or install with `npm install -g sourcespool`.
+Requires Windows 11 x64, a local NTFS library folder and Node >=22.0.0. [Node 24 LTS](https://nodejs.org/en/download) is recommended. Run `npx sourcespool@latest` or install with `npm install -g sourcespool`.
+
+## Node version errors in the published 0.2.0 package
+
+Version 0.2.0 installs on Node 25 with an npm engine warning, but its own startup guard then refuses to run. That release only accepts Node >=24.19.0 <25; `--force` does not bypass the application guard.
+
+Version **0.2.1** fixes this by accepting Node 22 and newer, including Node 25. Update a permanent installation, then launch normally:
+
+~~~powershell
+npm install -g sourcespool@latest
+sourcespool
+~~~
+
+For a one-off launch, use `npx sourcespool@latest`. If you must run the older 0.2.0 package, use a temporary Node 24 runtime:
+
+~~~powershell
+npx --yes --package=node@24.19.0 --package=sourcespool@0.2.0 -- sourcespool
+~~~
+
+This downloads Node into npm's cache and uses it for this command without replacing your system Node. npm can still print the engine warning during installation because npm itself starts under your system Node. Append SourceSpool options, such as `--setup`, after `sourcespool`.
+
+Node 22 is the minimum required by Ink and several terminal dependencies. The development pins do not limit which runtime users can launch with. Historical validation reports describe the version tested at the time.
 
 ## Tool setup
 
@@ -58,6 +79,6 @@ Run `npm install -g sourcespool@latest` to update a permanent installation, or `
 - If PowerShell blocks script shims, use `npm.cmd`, `npx.cmd` or `sourcespool.cmd`.
 - If a command is missing, reopen the terminal and check npm's user prefix and PATH.
 - For permission errors, use a user-writable npm prefix and library folder.
-- If setup rejects the runtime, check `node --version`. Node 25 and other operating systems are outside this release's support range.
+- If setup rejects the runtime, check `node --version` and `sourcespool --version`. Node versions below 22 require an upgrade; published 0.2.0 requires the Node 24 workaround above. Other operating systems remain unsupported.
 - For tool failures, run `sourcespool --check-tools` and verify explicit paths before using `--setup --repair`.
 - Missing tools in a noninteractive session produce instructions. Run guided setup in an interactive terminal or supply an explicit cache/download option.

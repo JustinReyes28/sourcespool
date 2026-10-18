@@ -1,11 +1,11 @@
 {
   "name": "sourcespool",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A Windows terminal media reference library with source context, duplicates and portable metadata",
   "type": "module",
   "license": "MIT",
   "engines": {
-    "node": ">=24.19.0 <25"
+    "node": ">=22.0.0"
   },
   "scripts": {
     "dev": "tsx src/cli.tsx",
