@@ -13,4 +13,4 @@ These images are annotated renders of captured **Ink terminal text**, rather tha
 - [30-second MP4](sourcespool-demo.mp4)
 - [Captured text and observations](frames.json)
 
-Reproduce with explicit tool environment variables: run tsx scripts/capture-demo.ts, then python scripts/render-demo.py (Pillow and Windows fonts), then encode video-inputs.txt with FFmpeg. Capture dependencies are development-only. These assets are prepared for phase 5; no social post has been published.
+Reproduce with explicit tool environment variables: run tsx scripts/capture-demo.ts, then python scripts/render-demo.py (Pillow and Windows fonts), then encode video-inputs.txt with FFmpeg. Capture dependencies are development-only. The [owner posting kit](../launch-kit/README.md) contains captions, image ordering and alt text for the revised Phase 5 handoff. The owner will publish independently; no social post has been published by the agent.

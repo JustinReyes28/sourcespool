@@ -1,0 +1,16 @@
+TITLE
+I built SourceSpool, a Windows terminal library for saved media references
+
+BODY
+I built SourceSpool to keep saved clips with the details that make them useful later: source URLs, tags, notes and collections.
+
+In the attached example, I save an original sample clip with the note "Look at the reflections," then find it by searching "reflections." Saving the same source and format again prompts me to keep the existing reference or save another.
+
+It also has filename previews and JSON metadata import/export. Exports don't include the media files; those need a separate backup.
+
+v0.1.0 is MIT licensed and tested on Windows 11 x64. It requires Node 24, yt-dlp and FFmpeg. This release handles one public source at a time; playlists and login/cookie downloads are excluded. Site availability depends on yt-dlp.
+
+Yoinks inspired the terminal download workflow. SourceSpool's code and sample media are original. The images are annotated renders of captured production terminal output from a local sample, rather than a live external-site test.
+
+Code and setup: https://github.com/JustinReyes28/sourcespool
+Release: https://github.com/JustinReyes28/sourcespool/releases/tag/v0.1.0

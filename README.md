@@ -8,7 +8,7 @@ Real downloading, saved collections, tags, notes, search, naming templates, dupl
 
 ![A reference saved and verified in the production app](docs/demo/03-saved.png)
 
-[30-second workflow](docs/demo/sourcespool-demo.mp4) · [Capture details](docs/demo/README.md) · [Release downloads and checksums](https://github.com/JustinReyes28/sourcespool/releases) · [Validation evidence](docs/validation-phase-3-4.md)
+[30-second workflow](docs/demo/sourcespool-demo.mp4) · [Capture details](docs/demo/README.md) · [Posting captions and images](docs/launch-kit/README.md) · [Release downloads and checksums](https://github.com/JustinReyes28/sourcespool/releases) · [Validation evidence](docs/validation-phase-3-4.md)
 
 ## Install and start
 
@@ -81,7 +81,7 @@ Production boundaries: terminal views → application controller/coordinator →
 
 ## Plans and credits
 
-[Product](PLAN-01-Product-and-Differentiation.md) · [Design](PLAN-02-Design-Architecture-and-GitHub.md) · [Build](PLAN-03-Build-and-Improve.md) · [Validate/release](PLAN-04-Validation-and-GitHub-Release.md) · [Launch/maintain](PLAN-05-Marketing-and-Maintenance.md) · [Execution evidence](docs/execution-status.md)
+[Product](PLAN-01-Product-and-Differentiation.md) · [Design](PLAN-02-Design-Architecture-and-GitHub.md) · [Build](PLAN-03-Build-and-Improve.md) · [Validate/release](PLAN-04-Validation-and-GitHub-Release.md) · [Posting kit](PLAN-05-Marketing-and-Maintenance.md) · [Execution evidence](docs/execution-status.md)
 
 [Yoinks](https://github.com/pablostanley/yoinks) by Pablo Stanley inspired the approachable terminal downloader concept. SourceSpool's code, collection workflow, copy, captures and sample media are original; no Yoinks source/assets were copied. [Comparison and provenance](docs/research/comparison-and-provenance.md).
 

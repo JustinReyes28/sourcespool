@@ -2,7 +2,7 @@
 
 Inspiration: Yoinks. Prepared 12 October 2026 (Asia/Singapore).
 
-This folder contains the five phase files for this project, from product definition through implementation, GitHub publishing, Reddit/X/LinkedIn marketing using browser computer use, and maintenance. Plans 1–4 are complete under the owner-approved solo-validation gate; see [execution evidence](docs/execution-status.md), the [public repository](https://github.com/JustinReyes28/sourcespool) and [v0.1.0 release](https://github.com/JustinReyes28/sourcespool/releases/tag/v0.1.0). The production app and separate design prototype are included. Interviews remain deferred with assumptions explicitly unvalidated. Phase 5 marketing and maintenance remains pending.
+This folder contains five phase files, from product definition through implementation, GitHub release and an owner posting kit. Plans 1–4 are complete under the owner-approved solo-validation gate; see [execution evidence](docs/execution-status.md), the [public repository](https://github.com/JustinReyes28/sourcespool) and [v0.1.0 release](https://github.com/JustinReyes28/sourcespool/releases/tag/v0.1.0). Phase 5 is complete under the revised handoff gate: [captions and screenshots](docs/launch-kit/README.md) are ready for the owner to publish independently. Feedback collection and ongoing maintenance are outside Phase 5. Interviews remain deferred with assumptions explicitly unvalidated.
 
 [Repository inspiration](Repo-Inspiration-2026-10-12.md) · [Public README](README.md) · [Reference notes](INSPIRATION-REFERENCE.md)
 
@@ -12,9 +12,9 @@ This folder contains the five phase files for this project, from product definit
 2. Design, architecture, and GitHub: define the workflow and storage, prepare the original scaffold, and create each product's separate repository during implementation.
 3. Build and improve: implement complete milestones and upload reviewable increments.
 4. Validate and release: test the actual product, run a small beta, and verify a versioned GitHub release.
-5. Market and maintain: use observed browser controls for the agreed Reddit, X, and LinkedIn launch, then support the release.
+5. Prepare the owner posting kit: deliver accurate captions and screenshots for the owner to publish independently.
 
-Execution dates and approved gate amendments are recorded in the execution log. Continue phase 5 using its completion gate. Check the product name and select the GitHub owner and repository URL during implementation. Public release is the intended outcome; the development visibility can be decided during setup.
+Execution dates and approved gate amendments are recorded in the execution log. Phase 5 ends with delivery of the posting kit; public social posting is the owner's next action.
 
 ## Yoinks → SourceSpool
 
@@ -24,7 +24,7 @@ Keep a small, searchable media collection with its source information and a pred
 - [Phase 2: Design, architecture, and GitHub](PLAN-02-Design-Architecture-and-GitHub.md)
 - [Phase 3: Build and improve](PLAN-03-Build-and-Improve.md)
 - [Phase 4: Validation and GitHub release](PLAN-04-Validation-and-GitHub-Release.md)
-- [Phase 5: Marketing and maintenance](PLAN-05-Marketing-and-Maintenance.md)
+- [Phase 5: Owner posting kit](PLAN-05-Marketing-and-Maintenance.md)
 
 ## What makes the plans substantive
 
@@ -32,7 +32,7 @@ This project specifies three distinct capabilities, improvements to the core exp
 
 ## Publication boundaries
 
-These phase plans originally scoped documentation only. The folder now contains the released production implementation and a separate design scaffold; consult the README for current behavior. Social copy remains draft material and must match the eventual released behaviour. Real publishing requires the correct user account, final destination, demonstrated feature claims, and the appropriate user authorisation when execution is requested.
+These phase plans originally scoped documentation only. The folder now contains the released production implementation and a separate design scaffold; consult the README for current behavior. Social copy matches the released v0.1.0 behavior. The owner will select accounts and destinations and publish independently; agent publication is outside the revised Phase 5 scope.
 
 ## Checked reference sources
 

@@ -4,7 +4,7 @@ Checked working product name: **SourceSpool**. See [name evidence](docs/research
 
 Status: executed 12 October 2026. The original scaffold is verified in the public [JustinReyes28/sourcespool repository](https://github.com/JustinReyes28/sourcespool), Windows checks pass, and all four phase 3 milestone issues are published. See [workflow sketches](docs/workflow.html), [state specification](docs/workflow.md), [architecture](docs/architecture.md), and [execution evidence](docs/execution-status.md). The original plan steps below remain as the phase specification.
 
-[1. Product](PLAN-01-Product-and-Differentiation.md) · [2. Design + GitHub](PLAN-02-Design-Architecture-and-GitHub.md) · [3. Build](PLAN-03-Build-and-Improve.md) · [4. Validate + release](PLAN-04-Validation-and-GitHub-Release.md) · [5. Market + maintain](PLAN-05-Marketing-and-Maintenance.md)
+[1. Product](PLAN-01-Product-and-Differentiation.md) · [2. Design + GitHub](PLAN-02-Design-Architecture-and-GitHub.md) · [3. Build](PLAN-03-Build-and-Improve.md) · [4. Validate + release](PLAN-04-Validation-and-GitHub-Release.md) · [5. Posting kit](PLAN-05-Marketing-and-Maintenance.md)
 
 ## Entry condition and goal
 

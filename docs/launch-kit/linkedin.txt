@@ -1,0 +1,12 @@
+I've released SourceSpool v0.1.0, a Windows terminal app for keeping media references organized.
+
+The workflow keeps the context with the file. Save a clip, keep its source URL, add tags and a note, then search those details when you need it again. In the attached example, searching "reflections" finds a clip through its note.
+
+The release includes collections, filename previews, duplicate prompts and JSON metadata import/export. Media stays in a local library; metadata exports don't contain the media files.
+
+It's MIT licensed and tested on Windows 11 x64, with Node 24, yt-dlp and FFmpeg required. This is a source release.
+
+Yoinks inspired the terminal download workflow. The code, sample media and captures are original. The images show captured production terminal output from a locally served sample.
+
+Code and setup: https://github.com/JustinReyes28/sourcespool
+Release: https://github.com/JustinReyes28/sourcespool/releases/tag/v0.1.0

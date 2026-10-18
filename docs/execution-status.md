@@ -50,6 +50,13 @@ Plans 3–5 remain unexecuted: production downloader/catalogue, release validati
 - Source archive: 617,914 bytes (about 0.62 MB), SHA-256 9cb7985269ac2894e76be92b6099bd780ac1be67fe397c6b04056a6a0a8eeede. GitHub asset digest matches. Anonymous HEAD returned HTTP 200 and the expected length; the archive body was not downloaded for verification. BUILD-INFO.json and SHA256SUMS.txt are attached.
 - Original MIT attribution, upstream credit, external-tool licenses and publication exclusions were checked. No tool binary, installed dependency, private library, credential or npm publication is included.
 
-## Remaining scope
+## Phase 5 — complete under the owner posting-kit gate (18 October 2026)
 
-Phase 5 launch and maintenance is unexecuted: no Reddit, X or LinkedIn post has been published. Interviews and independent usability research remain explicitly deferred follow-up, as approved by the owner.
+- At the owner's request, Phase 5 ends with delivery of captions and screenshots. The owner handles online publication independently. Feedback collection, report triage, bug fixes and later patch releases are outside this phase.
+- Prepared plain-text general, Reddit, X and LinkedIn captions with real repository/release links and upstream credit. Claims match v0.1.0 and do not promise live external-site compatibility or a standalone installer.
+- Reused all seven inspected 1280 × 720 production-text PNGs, including the light alternative. Added image ordering, alt text and capture provenance in the [posting kit](launch-kit/README.md).
+- Assembled a small [posting-kit ZIP](launch-kit/sourcespool-v0.1.0-posting-kit.zip) of captions, PNGs and the existing optional demo, included in the repository for download. Checked internal links and archive integrity. No package, tool or media download was needed.
+
+## Owner next action and deferred research
+
+The owner can use the kit to post on their chosen accounts. No social post has been published by the agent. Interviews and independent usability research remain deferred, with product assumptions explicitly unvalidated.

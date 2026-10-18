@@ -1,0 +1,3 @@
+I built SourceSpool: a Windows terminal media library with source links, tags, notes, search and duplicate prompts. v0.1.0 is out (MIT). Inspired by Yoinks.
+
+https://github.com/JustinReyes28/sourcespool
