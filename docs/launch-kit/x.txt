@@ -1,3 +1,7 @@
-I built SourceSpool: a Windows terminal media library with source links, tags, notes, search and duplicate prompts. v0.1.0 is out (MIT). Inspired by Yoinks.
+SourceSpool v0.2.0: keep saved clips with their source, tags and notes.
 
-https://github.com/JustinReyes28/sourcespool
+Try: npx sourcespool
+Windows 11 x64 + Node 24. First-run tools may download ~133 MB.
+
+MIT app, inspired by Yoinks.
+https://github.com/JustinReyes28/ClipShelf

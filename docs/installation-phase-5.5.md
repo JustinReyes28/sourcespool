@@ -1,6 +1,6 @@
 # Phase 5.5 installation evidence
 
-Status: implementation and local qualification complete; stable publication and final public-registry verification are pending. [Draft PR #5](https://github.com/JustinReyes28/ClipShelf/pull/5) contains the reviewable work. [Structured evidence](installation-phase-5.5.json) records the exact scope and artifact digest.
+Status: implementation, local qualification and stable npm publication complete; final hosted verification and GitHub release finalization are pending. [Draft PR #5](https://github.com/JustinReyes28/ClipShelf/pull/5) contains the reviewable work. [Structured evidence](installation-phase-5.5.json) records the exact scope and artifact digest.
 
 ## Local Windows qualification
 
@@ -18,7 +18,7 @@ Actual PowerShell/ConPTY checks covered setup decline, explicit cached setup, li
 
 The first public-registry npx check exposed that the temporary test directory was still nested under the source checkout, allowing npm's ancestor-package discovery to interfere. The test now uses the operating-system temporary directory outside the repository and checks the requested public version explicitly. [Corrected public-prerelease check](https://github.com/JustinReyes28/ClipShelf/actions/runs/39111967649) and [stable-candidate check](https://github.com/JustinReyes28/ClipShelf/actions/runs/39111970764) both passed. The corrected public check installed the prerelease from the registry and exercised its real tool/media workflow outside the source checkout.
 
-The prerelease upload was accepted after owner-controlled npm 2FA/browser authentication. Public metadata for 0.2.0-rc.1 is readable and its SHA-512 integrity matches the tested 38,900-byte artifact. npm initially assigned both next and latest to this first version; stable publication must set latest to 0.2.0. The 0.2.0 stable upload has been accepted; registry processing and final public-version qualification are pending. The GitHub release has not yet been published.
+The prerelease upload was accepted after owner-controlled npm 2FA/browser authentication. Public metadata for 0.2.0-rc.1 is readable and its SHA-512 integrity matches the tested 38,900-byte artifact. npm initially assigned both next and latest to this first version; stable publication must set latest to 0.2.0. The 0.2.0 stable version is publicly readable, latest points to 0.2.0, and its SHA-512 integrity matches the tested stable artifact. [Final public stable verification](https://github.com/JustinReyes28/ClipShelf/actions/runs/39112764746) is running after correcting the no-app-data assertion to exclude PowerShell’s own cache. The GitHub release has not yet been published.
 
 ## Cellular data and posting handoff
 
@@ -26,4 +26,4 @@ Reused all 41 cached runtime tarballs (1,569,551 compressed bytes), yt-dlp (17,8
 
 No carrier byte counter was captured, so the precise total cellular transfer is unmeasured. The suggested 50 MB allowance remains a planning figure, excluding ChatGPT/app traffic and unrelated updates. Keep caches and test artifacts for reproducibility; no cache purge or bulk local redownload was performed.
 
-All four release captions and the complete guide are prepared under [unpublished drafts](launch-kit/draft-v0.2.0/README.md). The ZIP builder checks all internal links, CRCs, file hashes, seven reused PNGs and X's 211-character weighted length. Promote the current posting files and build the final versioned ZIP only after the stable release is verified. The owner publishes social posts independently.
+All four current release captions, guide and the 475,120-byte versioned ZIP are prepared in the [posting kit](launch-kit/README.md), with a visible hold until final verification and GitHub publication finish. The [review drafts](launch-kit/draft-v0.2.0/README.md) remain available as history. The ZIP builder checks all internal links, CRCs, file hashes, seven reused PNGs and X's 211-character weighted length. Promote the current posting files and build the final versioned ZIP only after the stable release is verified. The owner publishes social posts independently.
