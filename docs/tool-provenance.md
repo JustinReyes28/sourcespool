@@ -29,3 +29,7 @@ Checksums detect mismatched bytes against the publisher's checksum; they are not
 The downloader ignores user downloader configuration, disables playlists and downloader caching, passes arguments with shell:false, uses the existing Node runtime for JavaScript support, and stages output inside the selected library. It does not install Python separately, handle cookies, upload catalogues or download tool updates.
 
 Original generated color/sine/test-pattern samples and captured application text are used for validation and demo assets. No upstream application source or assets were copied.
+
+## Phase 5.5 managed setup
+
+The npm installation candidate adds explicit guided or --download-tools setup, and --tool-cache for verified existing artifacts. It pins the hashes above, stages and checks all three executables before atomically switching the active manifest, and keeps tools in a per-user directory independently of npm. Neither npm installation nor diagnostics downloads tool binaries. Ordinary first launch may offer setup; only an explicit install choice starts a transfer. Earlier distribution descriptions above record the v0.1.0 source release.

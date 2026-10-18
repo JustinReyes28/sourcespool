@@ -1,27 +1,51 @@
-name: Windows production checks
+name: Windows installation qualification
 on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: 'Exact public package to verify, e.g. sourcespool@0.2.0-rc.1'
+        required: false
+        type: string
 permissions:
   contents: read
 jobs:
   windows:
     runs-on: windows-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
         with:
           node-version-file: .node-version
           cache: npm
-      - run: npm ci
+      - run: npm ci --no-audit --no-fund
+      - run: npm run build
+      - name: Download and verify original test-tool artifacts on the hosted runner
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force '.tmp/tools' | Out-Null
+          Invoke-WebRequest 'https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/yt-dlp.exe' -OutFile '.tmp/tools/yt-dlp.exe'
+          Invoke-WebRequest 'https://www.gyan.dev/ffmpeg/builds/packages/ffmpeg-9.0.2-essentials_build.zip' -OutFile '.tmp/tools/ffmpeg.zip'
+          if ((Get-FileHash '.tmp/tools/yt-dlp.exe' -Algorithm SHA256).Hash.ToLower() -ne '66674953fe251b89f4d08c5f0e35e0728679bd67ab3d7d05c0562af101dd3e7a') { throw 'yt-dlp hash mismatch' }
+          if ((Get-FileHash '.tmp/tools/ffmpeg.zip' -Algorithm SHA256).Hash.ToLower() -ne '60f467265b1e312373dbcd92200c2618a74850f98d3d078e94296bb3fa2047ba') { throw 'FFmpeg hash mismatch' }
+          tar.exe -xf '.tmp/tools/ffmpeg.zip' -C '.tmp/tools'
+          if ($LASTEXITCODE) { throw 'Extraction failed' }
       - run: npm run check
       - run: git diff --exit-code -- docs/workflow.html
-      - name: Explicitly install checksum-verified test tools
-        run: npm run tools:install
-      - name: Real media, process cancellation and forced-crash integration
+      - name: Original media, cancellation and crash recovery
         env:
-          SOURCESPOOL_YTDLP: ${{ github.workspace }}\.tools\yt-dlp.exe
-          SOURCESPOOL_FFMPEG: ${{ github.workspace }}\.tools\ffmpeg-9.0.2-essentials_build\bin\ffmpeg.exe
+          SOURCESPOOL_YTDLP: ${{ github.workspace }}\.tmp\tools\yt-dlp.exe
+          SOURCESPOOL_FFMPEG: ${{ github.workspace }}\.tmp\tools\ffmpeg-9.0.2-essentials_build\bin\ffmpeg.exe
         run: npm run test:integration
+      - name: Empty-cache package and actual upstream setup
+        env:
+          SOURCESPOOL_REGISTRY_PACKAGE: ${{ inputs.package }}
+        run: npm run test:package -- --online --tools
+      - name: Record compact installation evidence
+        if: always()
+        shell: pwsh
+        run: |
+          if (Test-Path '.tmp/phase55-package-evidence.json') { Get-Content '.tmp/phase55-package-evidence.json' | Out-File -Append -FilePath $env:GITHUB_STEP_SUMMARY }

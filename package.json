@@ -1,8 +1,7 @@
 {
   "name": "sourcespool",
-  "version": "0.1.0",
+  "version": "0.2.0-rc.1",
   "description": "A Windows terminal media reference library with source context, duplicates and portable metadata",
-  "private": true,
   "type": "module",
   "license": "MIT",
   "engines": {
@@ -20,7 +19,9 @@
     "package:release": "node scripts/package-release.mjs",
     "sketches": "tsx scripts/sketches.ts",
     "baseline": "node scripts/baseline.mjs",
-    "check": "npm run typecheck && npm test && npm run build && npm run sketches"
+    "check": "npm run typecheck && npm test && npm run build && npm run sketches",
+    "prepack": "npm run build",
+    "test:package": "node scripts/test-package.mjs"
   },
   "dependencies": {
     "ink": "8.0.0",
@@ -32,5 +33,32 @@
     "@types/react": "19.3.0",
     "tsx": "4.23.15",
     "typescript": "7.0.2"
+  },
+  "bin": {
+    "sourcespool": "dist/cli.js"
+  },
+  "files": [
+    "dist/**/*.js",
+    "README.md",
+    "LICENSE",
+    "docs/tool-provenance.md"
+  ],
+  "os": [
+    "win32"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustinReyes28/sourcespool.git"
+  },
+  "homepage": "https://github.com/JustinReyes28/sourcespool#readme",
+  "bugs": {
+    "url": "https://github.com/JustinReyes28/sourcespool/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   }
 }

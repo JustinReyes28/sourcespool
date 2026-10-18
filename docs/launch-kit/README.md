@@ -2,6 +2,8 @@
 
 Prepared 18 October 2026, Asia/Singapore. The owner will post online independently. Captions and image files are the Phase 5 deliverable; collecting feedback and maintaining later releases are outside this phase.
 
+A refresh of this guide, all four caption files and a versioned posting-kit ZIP is required by [Phase 5.5](../../PLAN-05.5-Easy-Installation-and-npm-Release.md) after its npm release is verified. That planned work will reuse existing local assets to reduce cellular usage. The current kit below describes v0.1.0; npm-install announcements have not been prepared or published.
+
 [Download the complete posting kit ZIP](https://github.com/JustinReyes28/sourcespool/raw/refs/heads/main/docs/launch-kit/sourcespool-v0.1.0-posting-kit.zip) (about 0.47 MB): captions, seven PNGs and the optional demo video.
 
 ## Copy to paste

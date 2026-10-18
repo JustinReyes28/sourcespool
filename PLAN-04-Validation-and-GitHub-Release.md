@@ -4,7 +4,7 @@ Checked working product name: **SourceSpool**. See [name evidence](docs/research
 
 Execution uses the owner-approved documented solo-testing gate (18 October 2026). Independent beta participation and interviews are deferred; no human observations are claimed. See [qualification and limitations](docs/validation-phase-3-4.md) and [release evidence](docs/execution-status.md).
 
-[1. Product](PLAN-01-Product-and-Differentiation.md) · [2. Design + GitHub](PLAN-02-Design-Architecture-and-GitHub.md) · [3. Build](PLAN-03-Build-and-Improve.md) · [4. Validate + release](PLAN-04-Validation-and-GitHub-Release.md) · [5. Posting kit](PLAN-05-Marketing-and-Maintenance.md) · [6. Android APK](PLAN-06-Android-Support.md)
+[1. Product](PLAN-01-Product-and-Differentiation.md) · [2. Design + GitHub](PLAN-02-Design-Architecture-and-GitHub.md) · [3. Build](PLAN-03-Build-and-Improve.md) · [4. Validate + release](PLAN-04-Validation-and-GitHub-Release.md) · [5. Posting kit](PLAN-05-Marketing-and-Maintenance.md) · [5.5. Easy installation](PLAN-05.5-Easy-Installation-and-npm-Release.md) · [6. Android APK](PLAN-06-Android-Support.md)
 
 ## Entry condition and acceptance focus
 
