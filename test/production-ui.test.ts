@@ -14,6 +14,10 @@ import { temporaryLibrary, FileDownloader, metadata } from './helpers.js';
 (globalThis as typeof globalThis & { IS_REACT_ACT_ENVIRONMENT: boolean }).IS_REACT_ACT_ENVIRONMENT = true;
 async function harness(controller: ApplicationController) {
   const chunks: string[] = [];
+  // Export and details actions return promises without using the background-task tracker.
+  const originalContinue = controller.continue;
+  let continuation = Promise.resolve();
+  controller.continue = () => { continuation = originalContinue.call(controller); return continuation; };
   const stdin = Object.assign(new PassThrough(), { isTTY: true, isRaw: false, setRawMode(raw: boolean) { this.isRaw = raw; return this; } });
   const stdout = Object.assign(new Writable({ write(chunk, _encoding, callback) { chunks.push(String(chunk)); callback(); } }), { isTTY: true, columns: 80, rows: 30 });
   let instance!: ReturnType<typeof render>;
@@ -23,11 +27,11 @@ async function harness(controller: ApplicationController) {
     initial: chunks.join(''), stdin,
     async key(value: string) {
       const mark = chunks.length;
-      await act(async () => { stdin.write(value); if (value === '\u001b') await delay(60); await delay(5); if (controller.state.busy && controller.state.page !== 'duplicate') await Promise.race([controller.waitForIdle(), delay(50)]); });
+      await act(async () => { stdin.write(value); if (value === '\u001b') await delay(60); await delay(5); await continuation; if (controller.state.busy && controller.state.page !== 'duplicate') await Promise.race([controller.waitForIdle(), delay(50)]); });
       await instance.waitUntilRenderFlush(); return chunks.slice(mark).join('');
     },
     async resize(columns: number, rows: number) { const mark = chunks.length; await act(async () => { stdout.columns = columns; stdout.rows = rows; stdout.emit('resize'); }); await instance.waitUntilRenderFlush(); return chunks.slice(mark).join(''); },
-    async close() { await act(async () => { controller.cancel(); await controller.waitForIdle(); instance.unmount(); }); stdin.destroy(); stdout.destroy(); }
+    async close() { await act(async () => { controller.cancel(); await continuation; await controller.waitForIdle(); instance.unmount(); }); controller.continue = originalContinue; stdin.destroy(); stdout.destroy(); }
   };
 }
 
@@ -47,7 +51,6 @@ test('production keyboard journey writes a real catalogue, searches notes and ex
     await app.key('\r'); assert.match(await app.key('prism'), /Rain reflections/); assert.match(await app.key('\r'), /Reference details/);
     await app.key('\u001b'); await app.key('\u001b'); await app.key('e');
     const exported = path.join(temp.directory, 'keyboard-export.json'); await app.key(exported); await app.key('\r');
-    await act(async () => { await controller.waitForIdle(); });
     assert.equal(JSON.parse(await fs.readFile(exported, 'utf8')).items[0].notes, 'Remember the prism.');
   } finally { await app.close(); await temp.cleanup(); }
 });
