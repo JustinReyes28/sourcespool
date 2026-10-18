@@ -31,6 +31,7 @@ jobs:
           # Older npm shims otherwise follow the runner's global prefix to a missing CLI.
           $nodeDirectory = Split-Path -Parent (Get-Command node).Source
           "NPM_CONFIG_PREFIX=$nodeDirectory" | Out-File -Append -Encoding utf8 -FilePath $env:GITHUB_ENV
+          "SOURCESPOOL_NPM_CLI=$(Join-Path $nodeDirectory 'node_modules/npm/bin/npm-cli.js')" | Out-File -Append -Encoding utf8 -FilePath $env:GITHUB_ENV
       - run: npm ci --no-audit --no-fund
       - run: npm run build
       - name: Download and verify original test-tool artifacts on the hosted runner
@@ -53,7 +54,7 @@ jobs:
       - name: Empty-cache package and actual upstream setup
         env:
           SOURCESPOOL_REGISTRY_PACKAGE: ${{ inputs.package }}
-        run: npm run test:package -- --online --tools
+        run: node scripts/test-package.mjs --online --tools
       - name: Record compact installation evidence
         if: always()
         shell: pwsh
