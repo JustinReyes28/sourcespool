@@ -4,4 +4,4 @@ Try: npx sourcespool
 Windows 11 x64 + Node 24. First-run tools may download ~133 MB.
 
 MIT app, inspired by Yoinks.
-https://github.com/JustinReyes28/ClipShelf
+https://github.com/JustinReyes28/sourcespool

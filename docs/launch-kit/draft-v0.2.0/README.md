@@ -4,7 +4,7 @@ Do not post until stable npm publication and the GitHub release are verified. Th
 
 Prepared 18 October 2026, Asia/Singapore. The owner publishes independently. This kit covers the npm release; no social account access or posting is required.
 
-[Download the posting-kit ZIP](https://github.com/JustinReyes28/ClipShelf/raw/refs/heads/main/docs/launch-kit/sourcespool-v0.2.0-posting-kit.zip). The historical [v0.1.0 ZIP](../sourcespool-v0.1.0-posting-kit.zip) remains available separately.
+[Download the posting-kit ZIP](https://github.com/JustinReyes28/sourcespool/raw/refs/heads/main/docs/launch-kit/sourcespool-v0.2.0-posting-kit.zip). The historical [v0.1.0 ZIP](../sourcespool-v0.1.0-posting-kit.zip) remains available separately.
 
 ## Copy to paste
 
@@ -44,7 +44,7 @@ The [existing 30-second video](../../demo/sourcespool-demo.mp4) is optional and 
 
 ## Release and credit
 
-[Repository and setup](https://github.com/JustinReyes28/ClipShelf) · [npm package](https://www.npmjs.com/package/sourcespool) · [v0.2.0 release](https://github.com/JustinReyes28/ClipShelf/releases/tag/v0.2.0) · [Installation evidence](https://github.com/JustinReyes28/ClipShelf/blob/main/docs/installation-phase-5.5.md).
+[Repository and setup](https://github.com/JustinReyes28/sourcespool) · [npm package](https://www.npmjs.com/package/sourcespool) · [v0.2.0 release](https://github.com/JustinReyes28/sourcespool/releases/tag/v0.2.0) · [Installation evidence](https://github.com/JustinReyes28/sourcespool/blob/main/docs/installation-phase-5.5.md).
 
 SourceSpool's application is MIT licensed; yt-dlp/FFmpeg and other dependencies retain their licenses. [Yoinks](https://github.com/pablostanley/yoinks) inspired the terminal concept. Application code, workflow, copy, sample media and captures are original.
 

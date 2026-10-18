@@ -1,5 +1,5 @@
 {
-  "status": "stable npm publication complete; final hosted verification and GitHub release pending",
+  "status": "stable npm publication and final hosted verification complete; PR merge and GitHub release pending",
   "checkedAt": "2026-10-18T08:39:06.460Z",
   "environment": {
     "local": "Windows 11 x64 build 26200 / PowerShell ConPTY",
@@ -76,16 +76,17 @@
     "npmOsOverride": "npm 11.6.2 global --os=linux did not reject installation; runtime guards remain authoritative"
   },
   "hostedChecks": {
-    "firstClean": "https://github.com/JustinReyes28/ClipShelf/actions/runs/39110411381",
-    "installedMedia": "https://github.com/JustinReyes28/ClipShelf/actions/runs/39111023262",
-    "externalDirectory": "https://github.com/JustinReyes28/ClipShelf/actions/runs/39111970764 (success)",
-    "publicPrerelease": "https://github.com/JustinReyes28/ClipShelf/actions/runs/39111967649 (success)",
-    "finalStable": "https://github.com/JustinReyes28/ClipShelf/actions/runs/39112764746"
+    "firstClean": "https://github.com/JustinReyes28/sourcespool/actions/runs/39110411381",
+    "installedMedia": "https://github.com/JustinReyes28/sourcespool/actions/runs/39111023262",
+    "externalDirectory": "https://github.com/JustinReyes28/sourcespool/actions/runs/39111970764 (success)",
+    "publicPrerelease": "https://github.com/JustinReyes28/sourcespool/actions/runs/39111967649 (success)",
+    "finalStable": "https://github.com/JustinReyes28/sourcespool/actions/runs/39112764746",
+    "finalStableConclusion": "success"
   },
   "publication": {
     "prerelease": "0.2.0-rc.1 accepted and publicly readable; integrity matches local artifact",
     "stable": "0.2.0 publicly readable; latest=0.2.0; SHA-512 matches tested tarball",
-    "pullRequest": "https://github.com/JustinReyes28/ClipShelf/pull/5"
+    "pullRequest": "https://github.com/JustinReyes28/sourcespool/pull/5"
   },
   "cellular": {
     "runtimeTarballsReused": 41,
@@ -98,8 +99,15 @@
     "excluded": "ChatGPT/app traffic and unrelated updates"
   },
   "postingKit": {
-    "bytes": 475120,
-    "sha256": "0e888b23550d023873035456735adf0e226185361a9b7350757c3309904c7659",
-    "status": "prepared; hold pending final verification and GitHub release"
+    "bytes": 475099,
+    "sha256": "737d5da39e61368f02c8555d511cbbe5ce22298fff8484d1e6cfc569ddfab66e",
+    "status": "canonical SourceSpool links refreshed; hold pending PR merge and GitHub release"
+  },
+  "repositoryNaming": {
+    "checkedAt": "2026-10-18T09:06:30.921990+00:00",
+    "canonical": "https://github.com/JustinReyes28/sourcespool",
+    "repositoryId": 1415471727,
+    "publishedArtifactUnchanged": true,
+    "metadataForFutureNpmRelease": true
   }
 }

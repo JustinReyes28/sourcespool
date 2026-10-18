@@ -15,6 +15,6 @@ The attached v0.1.0 workflow captures show an original local sample saved with t
 
 The app is MIT licensed and inspired by Yoinks; the application code and sample media are original. External tools keep their own licenses. This release handles one public item at a time; playlists and login/cookie downloads are excluded. Site availability depends on yt-dlp and is not guaranteed.
 
-Code and setup: https://github.com/JustinReyes28/ClipShelf
+Code and setup: https://github.com/JustinReyes28/sourcespool
 Package: https://www.npmjs.com/package/sourcespool
-Release: https://github.com/JustinReyes28/ClipShelf/releases/tag/v0.2.0
+Release: https://github.com/JustinReyes28/sourcespool/releases/tag/v0.2.0

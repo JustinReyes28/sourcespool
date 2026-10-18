@@ -8,6 +8,6 @@ First run checks existing tools and offers verified yt-dlp/FFmpeg setup if neede
 
 The app is MIT licensed; external tools retain their licenses. Yoinks inspired the terminal workflow. The code and sample media are original. Attached historical v0.1.0 captures use a locally served sample and illustrate the library workflow, not the npm installation screens or external-site compatibility.
 
-Code and setup: https://github.com/JustinReyes28/ClipShelf
+Code and setup: https://github.com/JustinReyes28/sourcespool
 Package: https://www.npmjs.com/package/sourcespool
-Release: https://github.com/JustinReyes28/ClipShelf/releases/tag/v0.2.0
+Release: https://github.com/JustinReyes28/sourcespool/releases/tag/v0.2.0

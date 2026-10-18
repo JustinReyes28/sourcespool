@@ -13,6 +13,6 @@ Requires Windows 11 x64 and Node 24 (24.19.0 or later in the Node 24 line). Firs
 
 The app is MIT licensed; external tools retain their own licenses. Inspired by Yoinks. Existing workflow images use original local samples captured in v0.1.0 and illustrate the library, not the new installation flow. Metadata exports do not include media files.
 
-Code and setup: https://github.com/JustinReyes28/ClipShelf
+Code and setup: https://github.com/JustinReyes28/sourcespool
 Package: https://www.npmjs.com/package/sourcespool
-Release: https://github.com/JustinReyes28/ClipShelf/releases/tag/v0.2.0
+Release: https://github.com/JustinReyes28/sourcespool/releases/tag/v0.2.0

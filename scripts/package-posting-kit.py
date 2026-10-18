@@ -13,9 +13,9 @@ entries = {}
 for name in ['README.md','general.txt','reddit.txt','x.txt','linkedin.txt']:
     data = (source/name).read_bytes()
     if name == 'README.md' and not args.release:
-        data = data.decode('utf-8').replace('](../../demo/','](../demo/').replace('](../sourcespool-v0.1.0-posting-kit.zip)','](https://github.com/JustinReyes28/ClipShelf/raw/refs/heads/main/docs/launch-kit/sourcespool-v0.1.0-posting-kit.zip)').encode('utf-8')
+        data = data.decode('utf-8').replace('](../../demo/','](../demo/').replace('](../sourcespool-v0.1.0-posting-kit.zip)','](https://github.com/JustinReyes28/sourcespool/raw/refs/heads/main/docs/launch-kit/sourcespool-v0.1.0-posting-kit.zip)').encode('utf-8')
     if name == 'README.md' and args.release:
-        data = data.decode('utf-8').replace('](sourcespool-v0.1.0-posting-kit.zip)','](https://github.com/JustinReyes28/ClipShelf/raw/refs/heads/main/docs/launch-kit/sourcespool-v0.1.0-posting-kit.zip)').encode('utf-8')
+        data = data.decode('utf-8').replace('](sourcespool-v0.1.0-posting-kit.zip)','](https://github.com/JustinReyes28/sourcespool/raw/refs/heads/main/docs/launch-kit/sourcespool-v0.1.0-posting-kit.zip)').encode('utf-8')
     entries[f'docs/launch-kit/{name}'] = data
 for file in (root/'docs/demo').iterdir():
     if file.is_file() and file.suffix != '.zip': entries[file.relative_to(root).as_posix()] = file.read_bytes()

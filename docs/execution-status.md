@@ -85,3 +85,10 @@ The owner can use the kit to post on their chosen accounts. No social post has b
 - Implemented compiled CLI packaging, dynamic version output, guided setup, pinned checksum verification, explicit offline artifact reuse, atomic managed-tool activation, concurrent/stale setup handling and preservation of library/settings data.
 - Initial local Windows 11/Node 24.19.0 checks passed 41 behavior/integration cases and isolated offline global/npx installation, setup and uninstall/reinstall. Final candidate, hosted qualification, terminal checks, publication and refreshed social handoff are still pending; follow [installation evidence](installation-phase-5.5.md).
 - Cached npm packages and .tmp/tools artifacts were reused; no external tool binaries were downloaded locally.
+
+## SourceSpool naming alignment — 18 October 2026
+
+- The owner confirmed retaining SourceSpool and requested aligning GitHub and current project references. Renamed the existing repository from ClipShelf to [sourcespool](https://github.com/JustinReyes28/sourcespool), preserving repository ID 1415471727 and the existing PR #5. Updated its description, npm homepage and the checkout's origin URL.
+- Updated canonical package/README/evidence links, all four current social captions, their review drafts and the posting-kit builder. Rebuilt the current ZIP using the existing images/video; no dependency, external tool or media download was needed. Historical concept and naming-research references remain intact.
+- Recorded the completed [public stable npm verification](https://github.com/JustinReyes28/sourcespool/actions/runs/39112764746). The npm package/command remains sourcespool@0.2.0. The published tarball is unchanged; canonical package-metadata changes are for a future npm release.
+- The naming cleanup is included in [PR #5](https://github.com/JustinReyes28/sourcespool/pull/5). Its merge, the GitHub v0.2.0 release and the social handoff remain pending separately from this naming task.
