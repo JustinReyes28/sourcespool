@@ -37,8 +37,6 @@ def render(frame, theme='dark'):
             if part_index < len(parts) - 1:
                 draw.rectangle((x, y + 3, x + 1, y + 20), fill=fg)
                 x += draw.textlength(' ', font=font)
-    draw.line((40, 650, 1240, 650), fill=stroke, width=1)
-    draw.text((40, 670), 'Captured production Ink text • original generated media • local HTTP • paths redacted', fill=muted, font=small)
     return image
 
 for frame in recording['frames']:

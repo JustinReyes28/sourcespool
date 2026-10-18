@@ -30,7 +30,7 @@ For one image, use note search. For a short sequence, attach context, saved, sea
 
 The [30-second video](../demo/sourcespool-demo.mp4) is also included in the ZIP.
 
-These are annotated renders of captured production Ink text using an original local sample. Keep the version heading and capture footer visible. Five-second video holds are editorial timing. The assets demonstrate the library workflow; first-run installation and external-site compatibility require separate evidence. [Capture details](../demo/README.md).
+These are annotated renders of captured production Ink text using an original local sample. Five-second video holds are editorial timing. The assets demonstrate the library workflow; first-run installation and external-site compatibility require separate evidence. [Capture details](../demo/README.md).
 
 ## Links and credit
 
