@@ -1,24 +1,24 @@
 {
-  "recordedAt": "2026-10-18T05:49:57.782Z",
-  "version": "0.1.0",
-  "source": "Actual production Ink render captured from keyboard-driven session using real yt-dlp/FFmpeg and original generated media over loopback HTTP. Absolute library/export paths redacted; timings editorially condensed.",
+  "recordedAt": "2026-10-18T09:29:05.674Z",
+  "version": "0.2.0",
+  "source": "Actual production Ink render captured from the development checkout in a keyboard-driven session using real yt-dlp/FFmpeg and original generated media over loopback HTTP. Library/export paths redacted; timings editorially condensed.",
   "frames": [
     {
       "name": "01-context",
       "caption": "Add source context before saving",
-      "text": " SourceSpool / local media library\n Add reference · Organize\n Collection: Field notes\n\n   Tags (comma separated): light, reference\n > Notes: Look at the reflections.▏\n\n Destination preview (UTC date)\n field-notes/2026-10-18-prism-study-a50140bc-354f-44fe-b32e-1fb60fd4b80f.mp4\n Tab Field · Ctrl+K Collection · Enter Review · Esc Back · Ctrl+G Help · Ctrl+C Exit",
+      "text": " SourceSpool / local media library\n Add reference · Organize\n Collection: Field notes\n\n   Tags (comma separated): light, reference\n > Notes: Look at the reflections.▏\n\n Destination preview (UTC date)\n field-notes/2026-10-18-prism-study-b07e32d8-6e11-4db8-b1be-f60483a55a9a.mp4\n Tab Field · Ctrl+K Collection · Enter Review · Esc Back · Ctrl+G Help · Ctrl+C Exit",
       "page": "organize"
     },
     {
       "name": "02-review",
       "caption": "Review the same naming path used for the save",
-      "text": " SourceSpool / local media library\n Ready to save\n prism-study\n Source: http://127.0.0.1:50287/prism-study.mp4\n Collection: Field notes\n Format: mp4\n Tags: light, reference\n Notes: Look at the reflections.\n\n Destination preview (UTC date)\n field-notes/2026-10-18-prism-study-a50140bc-354f-44fe-b32e-1fb60fd4b80f.mp4\n An existing filename receives a suffix; nothing is overwritten.\n Enter Save · Esc Back · Ctrl+G Help · Ctrl+C Exit",
+      "text": " SourceSpool / local media library\n Ready to save\n prism-study\n Source: http://127.0.0.1:63242/prism-study.mp4\n Collection: Field notes\n Format: mp4\n Tags: light, reference\n Notes: Look at the reflections.\n\n Destination preview (UTC date)\n field-notes/2026-10-18-prism-study-b07e32d8-6e11-4db8-b1be-f60483a55a9a.mp4\n An existing filename receives a suffix; nothing is overwritten.\n Enter Save · Esc Back · Ctrl+G Help · Ctrl+C Exit",
       "page": "review"
     },
     {
       "name": "03-saved",
       "caption": "Real yt-dlp download, SHA-256 verification and catalogue commit",
-      "text": " SourceSpool / local media library\n Reference saved\n prism-study\n field-notes/2026-10-18-prism-study-a50140bc-354f-44fe-b32e-1fb60fd4b80f.mp4\n 77,086 verified bytes · SHA-256 fbe77229aa5ec6b9…\n\n Saved and verified. Source, tags and notes are now searchable.\n Enter Search library · Esc Back · Ctrl+G Help · Ctrl+C Exit",
+      "text": " SourceSpool / local media library\n Reference saved\n prism-study\n field-notes/2026-10-18-prism-study-b07e32d8-6e11-4db8-b1be-f60483a55a9a.mp4\n 77,086 verified bytes · SHA-256 fbe77229aa5ec6b9…\n\n Saved and verified. Source, tags and notes are now searchable.\n Enter Search library · Esc Back · Ctrl+G Help · Ctrl+C Exit",
       "page": "completed"
     },
     {
@@ -30,13 +30,13 @@
     {
       "name": "05-duplicate",
       "caption": "Choose deliberately when the source is already saved",
-      "text": " SourceSpool / local media library\n This reference is already saved\n The source and selected format match an existing reference.\n prism-study\n field-notes/2026-10-18-prism-study-a50140bc-354f-44fe-b32e-1fb60fd4b80f.mp4\n\n K Keep existing · N Save another with a unique filename\n Esc Cancel and keep your draft\n K Keep existing · N Save another · Esc Cancel · Ctrl+C Exit",
+      "text": " SourceSpool / local media library\n This reference is already saved\n The source and selected format match an existing reference.\n prism-study\n field-notes/2026-10-18-prism-study-b07e32d8-6e11-4db8-b1be-f60483a55a9a.mp4\n\n K Keep existing · N Save another with a unique filename\n Esc Cancel and keep your draft\n K Keep existing · N Save another · Esc Cancel · Ctrl+C Exit",
       "page": "duplicate"
     },
     {
       "name": "06-export",
       "caption": "Export portable metadata; back up the media tree separately",
-      "text": " SourceSpool / local media library\n Export catalogue metadata\n Destination JSON file (must not already exist)\n .tmp\\demo-ejYNIr\\metadata-export.json▏\n\n Includes source links, tags, notes and relative paths.\n Media files are not included. Back up the media tree separately.\n Catalogue exported. Media files must be backed up separately.\n Enter Export · Ctrl+U Clear · Esc Back · Ctrl+G Help · Ctrl+C Exit",
+      "text": " SourceSpool / local media library\n Export catalogue metadata\n Destination JSON file (must not already exist)\n <demo-output>\\metadata-export.json▏\n\n Includes source links, tags, notes and relative paths.\n Media files are not included. Back up the media tree separately.\n Catalogue exported. Media files must be backed up separately.\n Enter Export · Ctrl+U Clear · Esc Back · Ctrl+G Help · Ctrl+C Exit",
       "page": "export"
     }
   ],

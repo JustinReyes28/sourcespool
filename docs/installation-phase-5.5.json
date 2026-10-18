@@ -99,9 +99,18 @@
     "excluded": "ChatGPT/app traffic and unrelated updates"
   },
   "postingKit": {
-    "bytes": 475099,
-    "sha256": "737d5da39e61368f02c8555d511cbbe5ce22298fff8484d1e6cfc569ddfab66e",
-    "status": "canonical SourceSpool links refreshed; hold pending PR merge and GitHub release"
+    "bytes": 451593,
+    "sha256": "1e6b46f13a513c35a9323358d305e61318203b549acd8881efcfca59a719bb20",
+    "status": "README and captions simplified; current checkout workflow recaptured; publication hold retained",
+    "captureVersion": "0.2.0",
+    "recordedAt": "2026-10-18T09:29:05.674Z",
+    "checks": [
+      "real save, note search, exact-source duplicate and metadata export",
+      "seven 1280x720 PNGs visually inspected",
+      "30-second 1280x720 video at 24 fps",
+      "ZIP internal links, CRCs and source-file hashes verified",
+      "X caption: 191 weighted characters"
+    ]
   },
   "repositoryNaming": {
     "checkedAt": "2026-10-18T09:06:30.921990+00:00",

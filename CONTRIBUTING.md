@@ -1,8 +1,16 @@
 # Contributing
 
-SourceSpool initially supports Windows 11 x64, local NTFS and Node 24.19.0.
+SourceSpool supports Windows 11 x64, local NTFS storage and Node >=24.19.0 <25.
 
-Run npm ci and npm run check. Real-media validation additionally requires explicitly installed yt-dlp/FFmpeg tools and npm run test:integration; see the README for environment variables. Do not count fixture-only tests as downloader or recovery evidence.
+Run `npm ci` and `npm run check`. Real-media validation additionally requires installed yt-dlp, FFmpeg and ffprobe. Set paths to your own installed tools, then run:
+
+~~~powershell
+$env:SOURCESPOOL_YTDLP = "C:/Tools/yt-dlp.exe"
+$env:SOURCESPOOL_FFMPEG = "C:/Tools/ffmpeg/bin/ffmpeg.exe"
+npm run test:integration
+~~~
+
+See [tool setup](docs/installation.md) for installation options and [tool provenance](docs/tool-provenance.md) for qualified versions. Do not count fixture-only tests as downloader or recovery evidence.
 
 Keep UI rendering/input in src/ui, orchestration in src/application, pure validation/naming/search in src/domain and external effects in adapters. Never spawn a shell with interpolated URLs. Final filenames are allocated without overwrite; completed catalogue entries follow observed nonempty final-file/hash verification. Keep atomic JSON writes, the writer lock, revision checks and recovery journals together.
 
