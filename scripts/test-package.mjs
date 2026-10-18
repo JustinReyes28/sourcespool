@@ -27,6 +27,7 @@ assert.match(await execute(['--help']), /--tool-cache/); assert.match(await exec
 await fs.access(path.join(prefix, 'sourcespool.cmd'));
 await assert.rejects(run(process.execPath, [cli, '--not-an-option'], { cwd, env }), e => e.code === 1 && /Unknown option/.test(e.stderr));
 assert.equal(await fs.stat(env.LOCALAPPDATA).then(() => true, () => false), false, 'help/version must not write user data');
+let installedMedia = null;
 const registryPackage = process.env.SOURCESPOOL_REGISTRY_PACKAGE;
 if (registryPackage) {
   assert.ok((await npm(['exec', '--yes', '--package', registryPackage, '--', 'sourcespool', '--version'])).includes('SourceSpool ' + packed.version));
@@ -45,13 +46,16 @@ if (process.argv.includes('--tools')) {
   const tools = path.join(env.LOCALAPPDATA, 'SourceSpool', 'tools', active.release);
   const settings = { schemaVersion: 1, libraryRoot: library, ytDlp: path.join(tools, 'yt-dlp.exe'), ffmpeg: path.join(tools, 'ffmpeg.exe') };
   await fs.writeFile(fixture, JSON.stringify(settings)); await execute(['--setup']);
+  installedMedia = await (await import('./installed-media.mjs')).verifyInstalledMedia({ prefix, work, tools, library });
+  const catalogueBeforeUninstall = await fs.readFile(path.join(library, 'catalogue.json'), 'utf8');
   assert.deepEqual(JSON.parse(await fs.readFile(fixture, 'utf8')), settings);
   await npm(['uninstall', '-g', 'sourcespool', '--prefix', prefix, '--no-audit', '--no-fund', ...network]);
   await fs.access(fixture); await fs.access(library); await fs.access(settings.ytDlp);
   await npm(['install', '-g', tarball, '--prefix', prefix, '--ignore-scripts', '--no-audit', '--no-fund', ...network]);
   await execute(['--check-tools']);
+  assert.equal(await fs.readFile(path.join(library, 'catalogue.json'), 'utf8'), catalogueBeforeUninstall);
 }
 const releaseCommit = (await run('git', ['-c', 'safe.directory=' + root, 'rev-parse', 'HEAD'], { cwd: root })).stdout.trim();
-const evidence = { releaseCommit, testedAt: new Date().toISOString(), version: packed.version, node: process.version, platform: process.platform, os: (await import('node:os')).release(), networkMode: online ? 'hosted clean online' : 'local offline cache', packageBytes: packed.size, sha256: createHash('sha256').update(await fs.readFile(tarball)).digest('hex'), files: names, artifact: path.relative(root, tarball), globalInstall: 'pass', npx: 'pass', lifecycleScriptsDisabled: true, toolSetup: process.argv.includes('--tools') ? 'pass' : 'not requested', registryPackage: registryPackage ?? null, workDirectory: path.relative(root, work) };
+const evidence = { installedMedia, releaseCommit, testedAt: new Date().toISOString(), version: packed.version, node: process.version, platform: process.platform, os: (await import('node:os')).release(), networkMode: online ? 'hosted clean online' : 'local offline cache', packageBytes: packed.size, sha256: createHash('sha256').update(await fs.readFile(tarball)).digest('hex'), files: names, artifact: path.relative(root, tarball), globalInstall: 'pass', npx: 'pass', lifecycleScriptsDisabled: true, toolSetup: process.argv.includes('--tools') ? 'pass' : 'not requested', registryPackage: registryPackage ?? null, workDirectory: path.relative(root, work) };
 await fs.writeFile(path.join(base, 'phase55-package-evidence.json'), JSON.stringify(evidence, null, 2) + '\n');
 console.log(JSON.stringify(evidence, null, 2));
