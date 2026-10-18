@@ -10,6 +10,7 @@ import { YtDlpDownloader, runProcess } from '../src/adapters/downloader.js';
 import { LibraryService } from '../src/application/library-service.js';
 import { ApplicationController } from '../src/application/controller.js';
 import { ProductionApp } from '../src/ui/production-app.js';
+import { appVersion } from '../src/version.js';
 
 const ytDlp = process.env.SOURCESPOOL_YTDLP; const ffmpeg = process.env.SOURCESPOOL_FFMPEG;
 if (!ytDlp || !ffmpeg) throw Error('Set explicit tool paths before recording the production demo.');
@@ -34,7 +35,7 @@ const frames: { name: string; caption: string; text: string; page: string }[] = 
 const redact = (text: string, absolute: string, label: string) => text.replace(new RegExp([...absolute].map(character => character.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('(?:\\r?\\n\\s*)?'), 'gi'), label);
 function capture(name: string, caption: string) {
   const frame = chunks.filter(s => s.includes('SourceSpool / local media library')).at(-1); if (!frame) throw Error('No rendered Ink frame captured.');
-  const text = redact(redact(frame.replace(/\x1b\[[0-?]*[ -/]*[@-~]/g, '').replace(/\x1b\][^\x07]*(?:\x07|\x1b\\)/g, '').replace(/\r/g, ''), library.root, 'C:\\SourceSpool-demo'), directory, '<demo-output>');
+  const text = redact(redact(redact(frame.replace(/\x1b\[[0-?]*[ -/]*[@-~]/g, '').replace(/\x1b\][^\x07]*(?:\x07|\x1b\\)/g, '').replace(/\r/g, ''), library.root, 'C:\\SourceSpool-demo'), directory, '<demo-output>'), path.relative(process.cwd(), directory), '<demo-output>');
   if (text.includes('Administrator') || text.includes('Documents\\Projects')) throw Error('Unredacted machine path in demo capture.');
   frames.push({ name, caption, text, page: controller.state.page });
 }
@@ -48,9 +49,17 @@ try {
   await key('\u001b'); await key('a'); await key('\r', true); await key('\r'); await key('\r'); await key('\r'); await act(async () => { await delay(100); }); await instance.waitUntilRenderFlush();
   if (controller.snapshot().page !== 'duplicate') throw Error('Expected actual source/format duplicate preflight.'); capture('05-duplicate', 'Choose deliberately when the source is already saved');
   await key('k', true); await key('\u001b'); await key('e'); await key(path.relative(process.cwd(), path.join(directory, 'metadata-export.json'))); await key('\r');
+  await act(async () => {
+    const deadline = Date.now() + 5000;
+    while (!controller.state.notice.startsWith('Catalogue exported.')) {
+      if (controller.state.error || Date.now() > deadline) throw Error(controller.state.error || 'Metadata export did not complete.');
+      await delay(10);
+    }
+  });
+  await instance.waitUntilRenderFlush();
   capture('06-export', 'Export portable metadata; back up the media tree separately');
   const exportEnvelope = JSON.parse(await fs.readFile(path.join(directory, 'metadata-export.json'), 'utf8')) as { items: unknown[] }; if (exportEnvelope.items.length !== 1) throw Error('Unexpected export count.');
-  await fs.writeFile(path.join(output, 'frames.json'), JSON.stringify({ recordedAt: new Date().toISOString(), version: '0.1.0', source: 'Actual production Ink render captured from keyboard-driven session using real yt-dlp/FFmpeg and original generated media over loopback HTTP. Absolute library/export paths redacted; timings editorially condensed.', frames: frames.map(frame => ({ ...frame, text: frame.text.split(directory).join('<demo-output>') })), observations: { savedRecords: controller.state.catalogue.items.length, exportedRecords: exportEnvelope.items.length, noFixtureSimulator: true } }, null, 2) + '\n');
+  await fs.writeFile(path.join(output, 'frames.json'), JSON.stringify({ recordedAt: new Date().toISOString(), version: appVersion, source: 'Actual production Ink render captured from the development checkout in a keyboard-driven session using real yt-dlp/FFmpeg and original generated media over loopback HTTP. Library/export paths redacted; timings editorially condensed.', frames, observations: { savedRecords: controller.state.catalogue.items.length, exportedRecords: exportEnvelope.items.length, noFixtureSimulator: true } }, null, 2) + '\n');
   console.log(`Recorded ${frames.length} production frames.`);
 } finally {
   await act(async () => { controller.cancel(); await controller.waitForIdle(); instance.unmount(); }); stdin.destroy(); stdout.destroy(); server.closeAllConnections(); await new Promise<void>(resolve => server.close(() => resolve()));

@@ -1,6 +1,6 @@
 # Phase 5.5 installation evidence
 
-Status: implementation, local qualification, stable npm publication and final hosted verification complete; PR merge and GitHub release finalization remain pending. [PR #5](https://github.com/JustinReyes28/sourcespool/pull/5) contains the reviewable work. [Structured evidence](installation-phase-5.5.json) records the exact scope and artifact digest.
+Status: implementation, local qualification, stable npm publication and final hosted verification complete. [PR #5](https://github.com/JustinReyes28/sourcespool/pull/5) merged on 18 October 2026 at 09:11:42 UTC; the GitHub v0.2.0 release is not yet published. [Structured evidence](installation-phase-5.5.json) records the exact scope and artifact digest.
 
 ## Local Windows qualification
 
@@ -28,4 +28,4 @@ Reused all 41 cached runtime tarballs (1,569,551 compressed bytes), yt-dlp (17,8
 
 No carrier byte counter was captured, so the precise total cellular transfer is unmeasured. The suggested 50 MB allowance remains a planning figure, excluding ChatGPT/app traffic and unrelated updates. Keep caches and test artifacts for reproducibility; no cache purge or bulk local redownload was performed.
 
-All four current release captions, guide and the 475,099-byte versioned ZIP are prepared in the [posting kit](launch-kit/README.md), with canonical SourceSpool repository links. The visible hold remains until PR merge and GitHub publication finish. The [review drafts](launch-kit/draft-v0.2.0/README.md) remain available as history. The ZIP builder checks all internal links, CRCs, file hashes, seven reused PNGs and X's 211-character weighted length. Final handoff remains separate from the completed public npm verification. The owner publishes social posts independently.
+The initial posting kit used historical v0.1.0 captures. On 18 October 2026 the [current kit](launch-kit/README.md) was refreshed with simplified captions and a new production capture from the v0.2.0 development checkout. Seven 1280 × 720 PNGs and the 30-second video were regenerated; the ZIP is 451,597 bytes. The [structured evidence](installation-phase-5.5.json) records its current SHA-256 and capture timestamp. Internal links, CRCs, source-file hashes and X's 191-character weighted length passed verification. [Earlier caption drafts](launch-kit/draft-v0.2.0/README.md) remain archived. Public npm metadata and the PR #5 merge were verified again on 18 October 2026. The GitHub v0.2.0 release remains unpublished; the current captions announce npm availability. The owner handles social posting.

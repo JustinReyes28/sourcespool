@@ -1,16 +1,31 @@
-# Production workflow capture
+# SourceSpool v0.2.0 workflow demo
 
-The six PNGs and 30-second MP4 show a keyboard-driven production session in SourceSpool 0.1.0. The app called the real yt-dlp/FFmpeg adapter, saved and hashed an original generated clip, committed JSON metadata, searched its note, warned on an exact source/format repeat, and exported a catalogue.
+Recorded on 18 October 2026 from the current development checkout. The six workflow images and 30-second video show a keyboard-driven production session: saving and hashing a clip with yt-dlp/FFmpeg, keeping its source and notes, searching by note, handling a duplicate and exporting metadata.
 
-These images are annotated renders of captured **Ink terminal text**, rather than desktop screenshots. They use actual application output; absolute library/export paths are redacted. The video holds each step for five seconds, so timing is editorial rather than a download-speed claim. The localhost source is an original fixture, not evidence about an external site's availability.
+These are annotated renders of actual Ink terminal output. The sample is original generated media served over localhost, and library/export paths are redacted. Each video frame is held for five seconds. The capture covers the library workflow; it does not cover first-run installation or test an external site's availability.
 
-- [Context and naming preview](01-context.png)
+- [Tags, notes and filename preview](01-context.png)
 - [Review before saving](02-review.png)
-- [Verified save, dark](03-saved.png) and [light comparison](03-saved-light.png)
+- [Verified save](03-saved.png), with a [light alternative](03-saved-light.png)
 - [Search by note](04-search.png)
 - [Duplicate choice](05-duplicate.png)
-- [Metadata export](06-export.png)
-- [30-second MP4](sourcespool-demo.mp4)
-- [Captured text and observations](frames.json)
+- [Completed metadata export](06-export.png)
+- [30-second video](sourcespool-demo.mp4)
+- [Captured text, version, timestamp and observations](frames.json)
 
-Reproduce with explicit tool environment variables: run tsx scripts/capture-demo.ts, then python scripts/render-demo.py (Pillow and Windows fonts), then encode video-inputs.txt with FFmpeg. Capture dependencies are development-only. The [owner posting kit](../launch-kit/README.md) contains captions, image ordering and alt text for the revised Phase 5 handoff. The owner will publish independently; no social post has been published by the agent.
+All seven PNGs are 1280 × 720. The [posting kit](../launch-kit/README.md) includes captions, attachment order and alt text.
+
+## Reproduce
+
+Install development dependencies and set `SOURCESPOOL_YTDLP` and `SOURCESPOOL_FFMPEG` to installed executables as shown in [Contributing](../../CONTRIBUTING.md). Rendering also requires Python with Pillow and the Windows Consolas/Segoe UI fonts.
+
+From the repository root:
+
+~~~powershell
+npx --no-install tsx scripts/capture-demo.ts
+python scripts/render-demo.py
+& $env:SOURCESPOOL_FFMPEG -hide_banner -loglevel error -y -f concat -safe 0 -i docs/demo/video-inputs.txt -vf fps=24 -t 30 -c:v libx264 -pix_fmt yuv420p -movflags +faststart docs/demo/sourcespool-demo.mp4
+python scripts/package-posting-kit.py --release
+~~~
+
+The recorder generates its sample locally and uses existing tools. It reads the version from the app; the renderer uses that recorded version in image headings. Regenerate the images, video and ZIP together after a new capture.

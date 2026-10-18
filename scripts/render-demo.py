@@ -14,7 +14,7 @@ def render(frame, theme='dark'):
     bg, fg, muted, stroke = ('#10151b', '#f2f4f7', '#b8c0cb', '#39414b') if theme == 'dark' else ('#ffffff', '#161b22', '#495361', '#c3cad2')
     image = Image.new('RGB', (1280, 720), bg)
     draw = ImageDraw.Draw(image)
-    draw.text((40, 24), 'SourceSpool 0.1.0', fill=fg, font=heading)
+    draw.text((40, 24), f"SourceSpool {recording['version']}", fill=fg, font=heading)
     draw.text((40, 66), frame['caption'], fill=muted, font=small)
     draw.line((40, 104, 1240, 104), fill=stroke, width=1)
     lines = frame['text'].strip().splitlines()
