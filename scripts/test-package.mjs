@@ -17,7 +17,9 @@ const cache = online ? path.join(work, 'empty-cache') : path.join(root, '.npm-ca
 const prefix = path.join(work, 'prefix'); const cwd = path.join(work, 'unrelated'); await fs.mkdir(cwd);
 const env = { ...process.env, LOCALAPPDATA: path.join(work, 'profile'), npm_config_cache: cache, npm_config_audit: 'false', npm_config_fund: 'false', npm_config_update_notifier: 'false' };
 const npm = async args => (await run(process.execPath, [npmCli, ...args], { cwd, env, maxBuffer: 4 * 1024 * 1024 })).stdout;
-const packed = JSON.parse((await run(process.execPath, [npmCli, 'pack', '--json', '--pack-destination', work], { cwd: root, env, maxBuffer: 4 * 1024 * 1024 })).stdout)[0];
+// npm 10 mixes prepack output into pack --json, so run the same build hook separately.
+await run(process.execPath, [npmCli, 'run', 'prepack'], { cwd: root, env, maxBuffer: 4 * 1024 * 1024 });
+const packed = JSON.parse((await run(process.execPath, [npmCli, 'pack', '--ignore-scripts', '--json', '--pack-destination', work], { cwd: root, env, maxBuffer: 4 * 1024 * 1024 })).stdout)[0];
 const names = packed.files.map(f => f.path);
 for (const required of ['dist/cli.js', 'dist/adapters/tool-setup.js', 'package.json', 'README.md', 'LICENSE', 'docs/tool-provenance.md']) assert.ok(names.includes(required), required);
 assert.ok(names.every(n => !/(^|\/)(node_modules|src|test|\.tmp|\.npm-cache|\.tools)(\/|$)|\.map$|\.(exe|zip|mp4)$/.test(n)));
