@@ -4,7 +4,7 @@ Checked working product name: **SourceSpool**. See [name evidence](docs/research
 
 Implementation executed on 18 October 2026. The complete production workflow and local qualification are recorded in [phase 3/4 evidence](docs/validation-phase-3-4.md). The owner approved deferring the problem study, with assumptions explicitly unvalidated. GitHub publication evidence is recorded in [execution status](docs/execution-status.md).
 
-[1. Product](PLAN-01-Product-and-Differentiation.md) · [2. Design + GitHub](PLAN-02-Design-Architecture-and-GitHub.md) · [3. Build](PLAN-03-Build-and-Improve.md) · [4. Validate + release](PLAN-04-Validation-and-GitHub-Release.md) · [5. Posting kit](PLAN-05-Marketing-and-Maintenance.md)
+[1. Product](PLAN-01-Product-and-Differentiation.md) · [2. Design + GitHub](PLAN-02-Design-Architecture-and-GitHub.md) · [3. Build](PLAN-03-Build-and-Improve.md) · [4. Validate + release](PLAN-04-Validation-and-GitHub-Release.md) · [5. Posting kit](PLAN-05-Marketing-and-Maintenance.md) · [6. Android APK](PLAN-06-Android-Support.md)
 
 ## Entry condition
 

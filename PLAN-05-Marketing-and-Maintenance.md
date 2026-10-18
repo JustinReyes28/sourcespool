@@ -4,7 +4,7 @@ Product: **SourceSpool**. Inspiration: [Yoinks](https://github.com/pablostanley/
 
 Status: complete under the revised handoff gate. Captions and images are ready in the [posting kit](docs/launch-kit/README.md). The owner will publish social posts independently; no social post has been published by the agent.
 
-[1. Product](PLAN-01-Product-and-Differentiation.md) · [2. Design + GitHub](PLAN-02-Design-Architecture-and-GitHub.md) · [3. Build](PLAN-03-Build-and-Improve.md) · [4. Validate + release](PLAN-04-Validation-and-GitHub-Release.md) · [5. Posting kit](PLAN-05-Marketing-and-Maintenance.md)
+[1. Product](PLAN-01-Product-and-Differentiation.md) · [2. Design + GitHub](PLAN-02-Design-Architecture-and-GitHub.md) · [3. Build](PLAN-03-Build-and-Improve.md) · [4. Validate + release](PLAN-04-Validation-and-GitHub-Release.md) · [5. Posting kit](PLAN-05-Marketing-and-Maintenance.md) · [6. Android APK](PLAN-06-Android-Support.md)
 
 ## Goal and scope
 

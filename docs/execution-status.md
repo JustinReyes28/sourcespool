@@ -60,3 +60,12 @@ Plans 3–5 remain unexecuted: production downloader/catalogue, release validati
 ## Owner next action and deferred research
 
 The owner can use the kit to post on their chosen accounts. No social post has been published by the agent. Interviews and independent usability research remain deferred, with product assumptions explicitly unvalidated.
+
+
+## Phase 6 — planned Android APK support (18 October 2026)
+
+- At the owner's request, created [Plan 6](../PLAN-06-Android-Support.md). The owner selected a regular installable APK rather than a Termux interface.
+- Proposed Kotlin/Compose UI, Android storage/job adapters, an early engine/license/native compatibility proof, and Windows v1 metadata interchange.
+- Defined five milestones, device and recovery checks, conditional site-compatibility claims, cellular controls and explicitly unmeasured download budgets. Proposed Android 10+/arm64 scope must be confirmed against actual devices.
+- Android implementation is not started; there is no Android build, APK or qualified device evidence. No Android SDK, emulator, dependency or media was downloaded for this planning task.
+- Phase 5 remains complete with publication handled by the owner. The deferred research limitation remains unchanged.
