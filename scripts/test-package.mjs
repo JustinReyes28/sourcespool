@@ -1,5 +1,6 @@
 import * as fs from 'node:fs/promises';
 import path from 'node:path';
+import os from 'node:os';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { createHash } from 'node:crypto';
@@ -10,7 +11,8 @@ const npmCli = process.env.npm_execpath ?? process.env.SOURCESPOOL_NPM_CLI;
 if (!npmCli) throw Error('Run through npm run test:package or set SOURCESPOOL_NPM_CLI.');
 const online = process.argv.includes('--online');
 const base = path.join(root, '.tmp'); await fs.mkdir(base, { recursive: true });
-const work = await fs.mkdtemp(path.join(base, 'package test 雨 '));
+const externalBase = path.join(os.tmpdir(), 'SourceSpool-package-tests'); await fs.mkdir(externalBase, { recursive: true });
+const work = await fs.mkdtemp(path.join(externalBase, 'package test 雨 '));
 const cache = online ? path.join(work, 'empty-cache') : path.join(root, '.npm-cache');
 const prefix = path.join(work, 'prefix'); const cwd = path.join(work, 'unrelated'); await fs.mkdir(cwd);
 const env = { ...process.env, LOCALAPPDATA: path.join(work, 'profile'), npm_config_cache: cache, npm_config_audit: 'false', npm_config_fund: 'false', npm_config_update_notifier: 'false' };
@@ -30,7 +32,8 @@ assert.equal(await fs.stat(env.LOCALAPPDATA).then(() => true, () => false), fals
 let installedMedia = null;
 const registryPackage = process.env.SOURCESPOOL_REGISTRY_PACKAGE;
 if (registryPackage) {
-  assert.ok((await npm(['exec', '--yes', '--package', registryPackage, '--', 'sourcespool', '--version'])).includes('SourceSpool ' + packed.version));
+  const requestedVersion = registryPackage.slice(registryPackage.lastIndexOf('@') + 1);
+  assert.ok((await npm(['exec', '--yes', '--package', registryPackage, '--', 'sourcespool', '--version'])).includes('SourceSpool ' + requestedVersion));
   await npm(['install', '-g', registryPackage, '--prefix', prefix, '--ignore-scripts', '--no-audit', '--no-fund']);
 } else {
   await npm(['exec', '--yes', ...network, '--package', tarball, '--', 'sourcespool', '--version']);
@@ -55,7 +58,9 @@ if (process.argv.includes('--tools')) {
   await execute(['--check-tools']);
   assert.equal(await fs.readFile(path.join(library, 'catalogue.json'), 'utf8'), catalogueBeforeUninstall);
 }
+const artifactDirectory = path.join(base, 'artifacts'); await fs.mkdir(artifactDirectory, { recursive: true });
+const preservedArtifact = path.join(artifactDirectory, packed.filename); await fs.copyFile(tarball, preservedArtifact);
 const releaseCommit = (await run('git', ['-c', 'safe.directory=' + root, 'rev-parse', 'HEAD'], { cwd: root })).stdout.trim();
-const evidence = { installedMedia, releaseCommit, testedAt: new Date().toISOString(), version: packed.version, node: process.version, platform: process.platform, os: (await import('node:os')).release(), networkMode: online ? 'hosted clean online' : 'local offline cache', packageBytes: packed.size, sha256: createHash('sha256').update(await fs.readFile(tarball)).digest('hex'), files: names, artifact: path.relative(root, tarball), globalInstall: 'pass', npx: 'pass', lifecycleScriptsDisabled: true, toolSetup: process.argv.includes('--tools') ? 'pass' : 'not requested', registryPackage: registryPackage ?? null, workDirectory: path.relative(root, work) };
+const evidence = { installedMedia, releaseCommit, testedAt: new Date().toISOString(), version: packed.version, node: process.version, platform: process.platform, os: (await import('node:os')).release(), networkMode: online ? 'hosted clean online' : 'local offline cache', packageBytes: packed.size, sha256: createHash('sha256').update(await fs.readFile(tarball)).digest('hex'), files: names, artifact: path.relative(root, preservedArtifact), globalInstall: 'pass', npx: 'pass', lifecycleScriptsDisabled: true, toolSetup: process.argv.includes('--tools') ? 'pass' : 'not requested', registryPackage: registryPackage ?? null, workDirectory: path.relative(root, work) };
 await fs.writeFile(path.join(base, 'phase55-package-evidence.json'), JSON.stringify(evidence, null, 2) + '\n');
 console.log(JSON.stringify(evidence, null, 2));
