@@ -1,5 +1,7 @@
 # Problem validation and pending interviews
 
+Owner decision, 18 October 2026: interviews are deferred for this release. The owner approved documented solo validation and explicitly approved deferring the 3–5-person problem study. No interviews or independent tester outcomes are claimed; the audience and workflow hypotheses remain unvalidated.
+
 Status: **pending external evidence**, 12 October 2026. No people were contacted and no sessions were fabricated. Phase 1 permits pending interviews if assumptions are explicit. Desktop research and a synthetic task walkthrough support a design hypothesis only.
 
 Recruit three to five creators/students who already keep permitted media locally. Aim for at least one person who uses Downloads alone, one who organizes folders and one who uses an archive/downloader. Ask for an existing permitted item; use a synthetic item if it contains private information. The owner will recruit testers; this task does not message people.

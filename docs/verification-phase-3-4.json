@@ -1,0 +1,45 @@
+{
+  "testedAt": "2026-10-18T05:46:31.888Z",
+  "environment": {
+    "platform": "Windows 11 x64 / local NTFS",
+    "node": "24.19.0",
+    "ytDlp": "2026.08.19",
+    "ffmpeg": "9.0.2"
+  },
+  "localChecks": {
+    "command": "npm run check",
+    "typecheck": "pass",
+    "behaviorAndKeyboardTests": 33,
+    "failed": 0,
+    "skipped": 0,
+    "build": "pass",
+    "deterministicGallery": "pass"
+  },
+  "realToolChecks": {
+    "command": "npm run test:integration",
+    "tests": 6,
+    "failed": 0,
+    "skipped": 0,
+    "scope": [
+      "three original HTTP clips in two collections; note search; duplicate; export/import",
+      "separate video/audio DASH merge and audio-only save",
+      "Windows child-process tree fully terminated before cancellation returns",
+      "forcibly killed writer; explicit stale lock release and verified journal recovery",
+      "actual yt-dlp slow HTTP download cancellation without completed record/staging",
+      "missing tools and format/network/auth/disk error messages"
+    ]
+  },
+  "terminal": "terminal-verification.json",
+  "media": "real-media-evidence.json",
+  "sourceOpen": {
+    "adapter": "fixed PowerShell Start-Process target via environment variable",
+    "observation": "Default-browser launch succeeded and a local HTTP request was observed",
+    "externalNetworkUsed": false
+  },
+  "humanStudy": {
+    "interviews": "deferred with explicit owner approval",
+    "independentBeta": "replaced by documented solo gate with explicit owner approval",
+    "productAssumptions": "unvalidated"
+  },
+  "publication": "Exact release commit, CI and artifact verification are recorded in execution-status.md after publication"
+}

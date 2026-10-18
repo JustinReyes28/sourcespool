@@ -1,9 +1,13 @@
 # Contributing
 
-SourceSpool is a phase 2 design scaffold. Start with the product brief and architecture; the four phase 3 issues describe the next implementation milestones. Keep fixture simulation separate from real media operations and keep README claims matched to observed behavior.
+SourceSpool initially supports Windows 11 x64, local NTFS and Node 24.19.0.
 
-Use Node 24.19.0 and the lockfile: `npm ci`, then `npm run check`. The check typechecks source/scripts/tests, exercises design and keyboard behavior, builds the CLI and regenerates the workflow gallery. Commit the generated gallery if its presentation changes. `npm run baseline` is an explicit local measurement; do not regenerate host data in CI.
+Run npm ci and npm run check. Real-media validation additionally requires explicitly installed yt-dlp/FFmpeg tools and npm run test:integration; see the README for environment variables. Do not count fixture-only tests as downloader or recovery evidence.
 
-Do not commit personal catalogues, media, cookies, credentials, private URLs, generated dependencies or machine configuration. New adapters must have meaningful tests for their effect boundaries; neither a screenshot nor a fixture success proves a real download or safe filesystem write.
+Keep UI rendering/input in src/ui, orchestration in src/application, pure validation/naming/search in src/domain and external effects in adapters. Never spawn a shell with interpolated URLs. Final filenames are allocated without overwrite; completed catalogue entries follow observed nonempty final-file/hash verification. Keep atomic JSON writes, the writer lock, revision checks and recovery journals together.
 
-Original application changes are MIT. Credit inspiration and record copied/reused components, exact upstream revisions, licenses and retained notices in the provenance register. No upstream application code or assets are currently copied.
+Use original or permitted fixtures. Do not commit node_modules, .tools, .tmp, personal libraries/media, credentials, cookies or private exports. Demonstrate changes with focused behavioral tests; document supported environments and limitations.
+
+The production app and synthetic design walkthrough are separate modes. Keep the gallery deterministic and label its simulated states. Product claims must match the release behavior and recorded validation.
+
+Open an issue with steps, expected/observed behavior, application/runtime/tool versions and a redacted error. Do not post private source URLs or an entire personal catalogue. Research and beta observations remain deferred until people actually participate; solo checks are not human usability evidence.

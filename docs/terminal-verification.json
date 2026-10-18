@@ -1,0 +1,93 @@
+{
+  "testedAt": "2026-10-18T05:45:51.835Z",
+  "host": "Actual Microsoft Windows Terminal (WT_SESSION present), Windows 11 x64",
+  "inputDispatch": "Host harness invokes the normal exit controller and dispatches SIGINT; a post-first-paint exception exercises finally cleanup. Separate real ConPTY key-input checks cover Q and Ctrl+C.",
+  "themes": "Explicit ANSI light foreground/background and dark foreground/background; no system preference changes",
+  "checks": [
+    {
+      "afterOutput": 7,
+      "scenario": "normal",
+      "beforeOutput": 7,
+      "applicationExit": 0,
+      "restored": true,
+      "windowsTerminalHost": true,
+      "theme": "dark",
+      "beforeInput": 503,
+      "afterInput": 503
+    },
+    {
+      "afterOutput": 7,
+      "scenario": "ctrlc",
+      "beforeOutput": 7,
+      "applicationExit": 0,
+      "restored": true,
+      "windowsTerminalHost": true,
+      "theme": "dark",
+      "beforeInput": 503,
+      "afterInput": 503
+    },
+    {
+      "afterOutput": 7,
+      "scenario": "error",
+      "beforeOutput": 7,
+      "applicationExit": 42,
+      "restored": true,
+      "windowsTerminalHost": true,
+      "theme": "dark",
+      "beforeInput": 503,
+      "afterInput": 503
+    },
+    {
+      "afterOutput": 7,
+      "scenario": "normal",
+      "beforeOutput": 7,
+      "applicationExit": 0,
+      "restored": true,
+      "windowsTerminalHost": true,
+      "theme": "light",
+      "beforeInput": 503,
+      "afterInput": 503
+    },
+    {
+      "afterOutput": 7,
+      "scenario": "ctrlc",
+      "beforeOutput": 7,
+      "applicationExit": 0,
+      "restored": true,
+      "windowsTerminalHost": true,
+      "theme": "light",
+      "beforeInput": 503,
+      "afterInput": 503
+    },
+    {
+      "afterOutput": 7,
+      "scenario": "error",
+      "beforeOutput": 7,
+      "applicationExit": 42,
+      "restored": true,
+      "windowsTerminalHost": true,
+      "theme": "light",
+      "beforeInput": 503,
+      "afterInput": 503
+    }
+  ],
+  "conptyKeyChecks": [
+    {
+      "scenario": "Q key",
+      "inputBefore": 503,
+      "inputAfter": 503,
+      "outputBefore": 7,
+      "outputAfter": 7,
+      "cursorRestored": true
+    },
+    {
+      "scenario": "Ctrl+C key",
+      "inputBefore": 503,
+      "inputAfter": 503,
+      "outputBefore": 7,
+      "outputAfter": 7,
+      "cursorRestored": true
+    }
+  ],
+  "scope": "Console modes and exit outcomes; no screen-reader or pixel-perfect host UI claim"
+}

@@ -1,5 +1,7 @@
 # Prioritized stories and release acceptance
 
+Implementation update, 18 October 2026: P0 stories are implemented and under release qualification. See validation-phase-3-4.md for evidence and the owner-approved research deferral.
+
 Phase 1 decisions, 12 October 2026. P0 is required for the first release. P1 improves the same job after P0. All real-media features remain phase 3 work; the phase 2 prototype only exercises design states.
 
 ## P0 — complete first-release journey

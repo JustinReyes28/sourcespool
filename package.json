@@ -1,21 +1,32 @@
 {
   "name": "sourcespool",
-  "version": "0.1.0-design",
-  "description": "A local media reference catalogue — phase 2 design scaffold",
+  "version": "0.1.0",
+  "description": "A Windows terminal media reference library with source context, duplicates and portable metadata",
   "private": true,
   "type": "module",
   "license": "MIT",
-  "engines": { "node": ">=24.19.0 <25" },
+  "engines": {
+    "node": ">=24.19.0 <25"
+  },
   "scripts": {
-    "dev": "tsx src/cli.tsx --demo",
+    "dev": "tsx src/cli.tsx",
+    "demo": "tsx src/cli.tsx --demo",
+    "start": "node dist/cli.js",
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.check.json --noEmit",
     "test": "tsx --test test/*.test.ts",
+    "test:integration": "tsx --test test/*.integration.ts",
+    "tools:install": "node scripts/setup-tools.mjs",
+    "package:release": "node scripts/package-release.mjs",
     "sketches": "tsx scripts/sketches.ts",
     "baseline": "node scripts/baseline.mjs",
     "check": "npm run typecheck && npm test && npm run build && npm run sketches"
   },
-  "dependencies": { "ink": "8.0.0", "react": "19.3.0" },
+  "dependencies": {
+    "ink": "8.0.0",
+    "react": "19.3.0",
+    "string-width": "8.3.0"
+  },
   "devDependencies": {
     "@types/node": "24.10.0",
     "@types/react": "19.3.0",

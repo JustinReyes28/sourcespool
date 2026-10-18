@@ -1,0 +1,82 @@
+{
+  "measuredAt": "2026-10-18T05:49:28.568Z",
+  "hostLabel": "SourceSpool development host (Windows x64; no hostname/user paths exported)",
+  "environment": {
+    "platform": "win32",
+    "arch": "x64",
+    "osRelease": "10.0.26200",
+    "node": "v24.19.0",
+    "cpu": "11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz",
+    "memoryGiB": 15.7
+  },
+  "startup": {
+    "metric": "New JS process dynamic import and library read to first actual Ink flush on Windows PTY; tool checks continue with visible feedback; excludes OS process creation",
+    "samples": 7,
+    "medianMs": 525.842,
+    "maxMs": 554.108,
+    "rawMs": [
+      525.842,
+      523.987,
+      518.869,
+      554.108,
+      532.933,
+      519.133,
+      532.186
+    ],
+    "toolsReady": {
+      "metric": "same start through completion of all external-tool version checks",
+      "medianMs": 2703.932,
+      "maxMs": 2787.602
+    }
+  },
+  "catalogue": {
+    "records": 1000,
+    "source": "Synthetic varied metadata written/read through production JSON repository; media payload excluded",
+    "read": {
+      "samples": 30,
+      "medianMs": 8.192,
+      "p95Ms": 9.81
+    },
+    "search": {
+      "samples": 30,
+      "medianMs": 0.815,
+      "p95Ms": 1.546
+    },
+    "atomicWrite": {
+      "samples": 7,
+      "medianMs": 111.957,
+      "maxMs": 119.894
+    }
+  },
+  "footprint": {
+    "dependencies": {
+      "bytes": 55620178,
+      "files": 5688
+    },
+    "build": {
+      "bytes": 236424,
+      "files": 48
+    },
+    "externalTools": {
+      "ytDlpBytes": 17840399,
+      "ffmpegDirectory": {
+        "bytes": 317548544,
+        "files": 3
+      }
+    },
+    "runtimeBytes": 92825416,
+    "excludes": [
+      "npm cache",
+      "tool download archives",
+      "saved media",
+      "source checkout"
+    ]
+  },
+  "baselineComparison": {
+    "phase2FixtureStartupMedianMs": 620.126,
+    "phase2InMemorySearchP95Ms": 1.255,
+    "startupProvisionalTargetMs": 1500,
+    "searchProvisionalTargetMs": 50,
+    "note": "Production startup performs actual disk and executable checks; phase 2 printed a synthetic snapshot. Scope differs."
+  }
+}

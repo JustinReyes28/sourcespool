@@ -1,0 +1,31 @@
+{
+  "measuredAt": "2026-10-18T05:40:00.596Z",
+  "versions": {
+    "ytDlp": "2026.08.19",
+    "ffmpeg": "ffmpeg version 9.0.2-essentials_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+    "ffprobe": "ffprobe version 9.0.2-essentials_build-www.gyan.dev Copyright (c) 2007-2026 the FFmpeg developers"
+  },
+  "samples": [
+    {
+      "title": "sample-0",
+      "bytes": 11857,
+      "hash": "d62454a1ee38efb917e7b20978ac1adb3993574241eed8a1dd71ca4829187200",
+      "collection": "field-notes"
+    },
+    {
+      "title": "sample-1",
+      "bytes": 11852,
+      "hash": "9e7ea74891fc5be3b93a229a29018754da0ba26925ca5cd310b20e79524abb1c",
+      "collection": "field-notes"
+    },
+    {
+      "title": "sample-2",
+      "bytes": 11858,
+      "hash": "ad574157f90637ef85d459d9f015c141a409e07bde17f1a74fc61c5cfc40b9c3",
+      "collection": "studio"
+    }
+  ],
+  "task": "3 original generated clips / 2 collections / note search / duplicate / export / import",
+  "result": "pass",
+  "source": "Original color and sine fixtures generated with FFmpeg; served over HTTP on loopback. No public-site reliability claim."
+}

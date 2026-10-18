@@ -1,0 +1,13 @@
+file '01-context.png'
+duration 5
+file '02-review.png'
+duration 5
+file '03-saved.png'
+duration 5
+file '04-search.png'
+duration 5
+file '05-duplicate.png'
+duration 5
+file '06-export.png'
+duration 5
+file '06-export.png'
