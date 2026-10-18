@@ -25,6 +25,12 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           cache: npm
+      - name: Use npm bundled with the selected Node runtime
+        shell: pwsh
+        run: |
+          # Older npm shims otherwise follow the runner's global prefix to a missing CLI.
+          $nodeDirectory = Split-Path -Parent (Get-Command node).Source
+          "NPM_CONFIG_PREFIX=$nodeDirectory" | Out-File -Append -Encoding utf8 -FilePath $env:GITHUB_ENV
       - run: npm ci --no-audit --no-fund
       - run: npm run build
       - name: Download and verify original test-tool artifacts on the hosted runner
