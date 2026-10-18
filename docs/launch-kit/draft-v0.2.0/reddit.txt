@@ -1,0 +1,20 @@
+TITLE
+SourceSpool now launches with npx: a Windows library for saved media references
+
+BODY
+I’ve released SourceSpool v0.2.0. It keeps saved clips with source URLs, collections, tags and notes, so you can search the context later.
+
+The installation is simpler now:
+npx sourcespool
+
+For a permanent installation, run npm install -g sourcespool, then sourcespool. You need Windows 11 x64 and Node 24, version 24.19.0 or later within that major version. First run offers verified yt-dlp/FFmpeg setup if working tools are missing, then asks for a library folder. Fresh tools download about 133 MB. You can reuse existing verified downloads with --setup --tool-cache instead.
+
+The library includes filename previews, duplicate choices and JSON metadata import/export. Exports contain metadata; media files need a separate backup. Existing v0.1.0 libraries remain compatible.
+
+The attached v0.1.0 workflow captures show an original local sample saved with the note “Look at the reflections,” then found through that note. They illustrate the library workflow, not the new installation screens or a live external-site test.
+
+The app is MIT licensed and inspired by Yoinks; the application code and sample media are original. External tools keep their own licenses. This release handles one public item at a time; playlists and login/cookie downloads are excluded. Site availability depends on yt-dlp and is not guaranteed.
+
+Code and setup: https://github.com/JustinReyes28/sourcespool
+Package: https://www.npmjs.com/package/sourcespool
+Release: https://github.com/JustinReyes28/sourcespool/releases/tag/v0.2.0

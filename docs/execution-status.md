@@ -62,6 +62,15 @@ Plans 3–5 remain unexecuted: production downloader/catalogue, release validati
 The owner can use the kit to post on their chosen accounts. No social post has been published by the agent. Interviews and independent usability research remain deferred, with product assumptions explicitly unvalidated.
 
 
+## Phase 5.5 — planned easy installation and npm release (18 October 2026)
+
+- At the owner's request, created [Plan 5.5](../PLAN-05.5-Easy-Installation-and-npm-Release.md) to address the developer setup required by v0.1.0.
+- Defined six milestones: npm packaging, per-user verified tool setup, first-run/update/uninstall behavior, installed-artifact qualification, public registry publication/verification, and release/social documentation refresh.
+- Target commands depend on verified npm name and publisher access. Existing Windows/Node support, library compatibility and tool provenance remain part of the acceptance gate.
+- At the owner's further request, require updating the README, posting-kit guide, general/Reddit/X/LinkedIn captions and a versioned ZIP for the verified npm release. Current public captions remain accurate for v0.1.0 until the new release is verified; social publication stays with the owner.
+- Added a cellular-data constraint: preserve and verify the existing npm cache, downloaded yt-dlp/FFmpeg files and local media/assets; use offline/local-artifact paths locally and run fresh bulk-download checks on GitHub-hosted Windows runners. Recorded a planning estimate of 10–30 MB local download and 1–5 MB upload with a suggested 50 MB total allowance, exclusions and required transfer evidence. These are estimates, not completed Phase 5.5 measurements.
+- Planning only: no runtime/package configuration changed, npm account authenticated, dependency/tool downloaded or npm release published for this task. Implementation and release verification remain pending.
+
 ## Phase 6 — planned Android APK support (18 October 2026)
 
 - At the owner's request, created [Plan 6](../PLAN-06-Android-Support.md). The owner selected a regular installable APK rather than a Termux interface.
@@ -69,3 +78,17 @@ The owner can use the kit to post on their chosen accounts. No social post has b
 - Defined five milestones, device and recovery checks, conditional site-compatibility claims, cellular controls and explicitly unmeasured download budgets. Proposed Android 10+/arm64 scope must be confirmed against actual devices.
 - Android implementation is not started; there is no Android build, APK or qualified device evidence. No Android SDK, emulator, dependency or media was downloaded for this planning task.
 - Phase 5 remains complete with publication handled by the owner. The deferred research limitation remains unchanged.
+
+## Phase 5.5 execution — in progress (18 October 2026)
+
+- Started the owner-authorized one-hour execution. npm account justinreyes28 and GitHub account JustinReyes28 verified in the normal user context; the restricted helper cannot see their sign-ins. The unscoped npm name returned registry 404 before publication.
+- Implemented compiled CLI packaging, dynamic version output, guided setup, pinned checksum verification, explicit offline artifact reuse, atomic managed-tool activation, concurrent/stale setup handling and preservation of library/settings data.
+- Initial local Windows 11/Node 24.19.0 checks passed 41 behavior/integration cases and isolated offline global/npx installation, setup and uninstall/reinstall. Final candidate, hosted qualification, terminal checks, publication and refreshed social handoff are still pending; follow [installation evidence](installation-phase-5.5.md).
+- Cached npm packages and .tmp/tools artifacts were reused; no external tool binaries were downloaded locally.
+
+## SourceSpool naming alignment — 18 October 2026
+
+- The owner confirmed retaining SourceSpool and requested aligning GitHub and current project references. Renamed the existing repository from ClipShelf to [sourcespool](https://github.com/JustinReyes28/sourcespool), preserving repository ID 1415471727 and the existing PR #5. Updated its description, npm homepage and the checkout's origin URL.
+- Updated canonical package/README/evidence links, all four current social captions, their review drafts and the posting-kit builder. Rebuilt the current ZIP using the existing images/video; no dependency, external tool or media download was needed. Historical concept and naming-research references remain intact.
+- Recorded the completed [public stable npm verification](https://github.com/JustinReyes28/sourcespool/actions/runs/39112764746). The npm package/command remains sourcespool@0.2.0. The published tarball is unchanged; canonical package-metadata changes are for a future npm release.
+- The naming cleanup is included in [PR #5](https://github.com/JustinReyes28/sourcespool/pull/5). Its merge, the GitHub v0.2.0 release and the social handoff remain pending separately from this naming task.

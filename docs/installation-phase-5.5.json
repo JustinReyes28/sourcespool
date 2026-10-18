@@ -1,0 +1,113 @@
+{
+  "status": "stable npm publication and final hosted verification complete; PR merge and GitHub release pending",
+  "checkedAt": "2026-10-18T08:39:06.460Z",
+  "environment": {
+    "local": "Windows 11 x64 build 26200 / PowerShell ConPTY",
+    "node": "24.19.0",
+    "npm": "11.6.2",
+    "hosted": "Windows runner build 26100; does not substitute for Windows 11 qualification"
+  },
+  "stableArtifact": {
+    "version": "0.2.0",
+    "bytes": 38921,
+    "sha256": "cf77cc31330cb9c48706ac85c1c3421a26d95fefccd3ee718bb5e3e957a7537e",
+    "files": [
+      "LICENSE",
+      "README.md",
+      "dist/adapters/downloader.js",
+      "dist/adapters/fixtures.js",
+      "dist/adapters/local-library.js",
+      "dist/adapters/opener.js",
+      "dist/adapters/settings.js",
+      "dist/adapters/tool-setup.js",
+      "dist/application/controller.js",
+      "dist/application/design-simulator.js",
+      "dist/application/library-service.js",
+      "dist/cli.js",
+      "dist/domain/catalogue.js",
+      "dist/domain/model.js",
+      "dist/ports/index.js",
+      "dist/production-cli.js",
+      "dist/ui/app.js",
+      "dist/ui/presentation.js",
+      "dist/ui/production-app.js",
+      "dist/version.js",
+      "docs/tool-provenance.md",
+      "package.json"
+    ]
+  },
+  "localChecks": {
+    "behaviorAndSetupTests": 35,
+    "realToolIntegrationTests": 6,
+    "externalDirectoryGlobalInstall": "pass",
+    "externalDirectoryNpx": "pass",
+    "lifecycleScriptsDisabled": "pass",
+    "installedMedia": {
+      "result": "pass",
+      "source": "original generated media over loopback",
+      "savedHash": "d62454a1ee38efb917e7b20978ac1adb3993574241eed8a1dd71ca4829187200",
+      "bytes": 11857,
+      "duplicateCount": 1,
+      "noteSearch": "pass",
+      "metadataExport": "pass",
+      "separateAudioVideoMerge": "pass"
+    },
+    "v1Upgrade": {
+      "createdByVersion": "0.1.0",
+      "openedByVersion": "0.2.0-rc.1",
+      "artifactSha256": "6a60aba934d5002b83a3c1625fce9044ae3dc2b4837d3776cdf285c00f96f0eb",
+      "cataloguePreserved": true,
+      "settingsPreserved": true,
+      "mediaHashPreserved": true,
+      "uninstallReinstall": "pass",
+      "fixtureSource": "generated through the retained v0.1.0 LocalLibrary implementation; no user library modified"
+    },
+    "terminal": [
+      "decline setup without opening a library",
+      "explicit cache setup with no network fallback",
+      "library folder selection and confirmation",
+      "remembered reopening",
+      "Q exit",
+      "Ctrl+C exit"
+    ],
+    "readonlyCwd": "pass; temporary ACL restored",
+    "unsupportedNode": "Node 25.2.1 rejected",
+    "platformGuard": "linux/arm64 process-configuration simulations rejected; no foreign-platform qualification claimed",
+    "npmOsOverride": "npm 11.6.2 global --os=linux did not reject installation; runtime guards remain authoritative"
+  },
+  "hostedChecks": {
+    "firstClean": "https://github.com/JustinReyes28/sourcespool/actions/runs/39110411381",
+    "installedMedia": "https://github.com/JustinReyes28/sourcespool/actions/runs/39111023262",
+    "externalDirectory": "https://github.com/JustinReyes28/sourcespool/actions/runs/39111970764 (success)",
+    "publicPrerelease": "https://github.com/JustinReyes28/sourcespool/actions/runs/39111967649 (success)",
+    "finalStable": "https://github.com/JustinReyes28/sourcespool/actions/runs/39112764746",
+    "finalStableConclusion": "success"
+  },
+  "publication": {
+    "prerelease": "0.2.0-rc.1 accepted and publicly readable; integrity matches local artifact",
+    "stable": "0.2.0 publicly readable; latest=0.2.0; SHA-512 matches tested tarball",
+    "pullRequest": "https://github.com/JustinReyes28/sourcespool/pull/5"
+  },
+  "cellular": {
+    "runtimeTarballsReused": 41,
+    "runtimeTarballBytes": 1569551,
+    "toolArtifactBytesReused": 132608475,
+    "localExternalToolBinaryDownloadBytes": 0,
+    "postingDraftArchiveBytes": 475147,
+    "totalCarrierBytes": "not metered; no precise total claimed",
+    "planningAllowanceMB": 50,
+    "excluded": "ChatGPT/app traffic and unrelated updates"
+  },
+  "postingKit": {
+    "bytes": 475099,
+    "sha256": "737d5da39e61368f02c8555d511cbbe5ce22298fff8484d1e6cfc569ddfab66e",
+    "status": "canonical SourceSpool links refreshed; hold pending PR merge and GitHub release"
+  },
+  "repositoryNaming": {
+    "checkedAt": "2026-10-18T09:06:30.921990+00:00",
+    "canonical": "https://github.com/JustinReyes28/sourcespool",
+    "repositoryId": 1415471727,
+    "publishedArtifactUnchanged": true,
+    "metadataForFutureNpmRelease": true
+  }
+}

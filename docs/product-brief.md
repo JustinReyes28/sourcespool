@@ -36,4 +36,6 @@ Use an original TypeScript/React/Ink application. Reuse maintained libraries thr
 
 Working name: **SourceSpool**. ClipShelf was rejected because of the existing Microsoft Store app. Exact web/name searches and GitHub repository checks found no matching SourceSpool product/repository on 12 October; this is a practical naming check, not legal clearance. [Name evidence](research/name-check.md).
 
+On 18 October 2026, the owner confirmed **SourceSpool** as the public product name, with **sourcespool** used for the npm package, CLI command and GitHub repository. The earlier ClipShelf name is retained only in historical records and the existing local checkout path.
+
 Success is a tested release journey, not prototype polish: a tester saves three permitted items into two collections, finds one through its note, handles a repeated item and restores metadata from an export. Completion and feature claims wait for phase 3/4 evidence.

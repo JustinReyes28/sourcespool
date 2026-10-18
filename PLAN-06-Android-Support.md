@@ -2,7 +2,7 @@
 
 Prepared 18 October 2026, Asia/Singapore. Status: **planned; implementation not started**. The owner chose a regular installable Android app (APK). This plan does not create Android support or change the Windows v0.1.0 release.
 
-[1. Product](PLAN-01-Product-and-Differentiation.md) · [2. Design + GitHub](PLAN-02-Design-Architecture-and-GitHub.md) · [3. Build](PLAN-03-Build-and-Improve.md) · [4. Validate + release](PLAN-04-Validation-and-GitHub-Release.md) · [5. Posting kit](PLAN-05-Marketing-and-Maintenance.md) · [6. Android APK](PLAN-06-Android-Support.md)
+[1. Product](PLAN-01-Product-and-Differentiation.md) · [2. Design + GitHub](PLAN-02-Design-Architecture-and-GitHub.md) · [3. Build](PLAN-03-Build-and-Improve.md) · [4. Validate + release](PLAN-04-Validation-and-GitHub-Release.md) · [5. Posting kit](PLAN-05-Marketing-and-Maintenance.md) · [5.5. Easy installation](PLAN-05.5-Easy-Installation-and-npm-Release.md) · [6. Android APK](PLAN-06-Android-Support.md)
 
 ## Goal and feasibility
 

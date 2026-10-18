@@ -4,7 +4,7 @@ Checked working product name: **SourceSpool**. See [name evidence](docs/research
 
 Status: executed 12 October 2026. Product decisions and scope are complete; interviews remain explicitly pending under this phase's exit rule. See [product brief](docs/product-brief.md), [stories](docs/user-stories.md), [comparison/provenance](docs/research/comparison-and-provenance.md), [name check](docs/research/name-check.md), and [research assumptions](docs/research/problem-validation.md). The original plan steps below remain as the phase specification.
 
-[1. Product](PLAN-01-Product-and-Differentiation.md) · [2. Design + GitHub](PLAN-02-Design-Architecture-and-GitHub.md) · [3. Build](PLAN-03-Build-and-Improve.md) · [4. Validate + release](PLAN-04-Validation-and-GitHub-Release.md) · [5. Posting kit](PLAN-05-Marketing-and-Maintenance.md) · [6. Android APK](PLAN-06-Android-Support.md)
+[1. Product](PLAN-01-Product-and-Differentiation.md) · [2. Design + GitHub](PLAN-02-Design-Architecture-and-GitHub.md) · [3. Build](PLAN-03-Build-and-Improve.md) · [4. Validate + release](PLAN-04-Validation-and-GitHub-Release.md) · [5. Posting kit](PLAN-05-Marketing-and-Maintenance.md) · [5.5. Easy installation](PLAN-05.5-Easy-Installation-and-npm-Release.md) · [6. Android APK](PLAN-06-Android-Support.md)
 
 ## Intended result
 

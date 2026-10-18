@@ -1,10 +1,18 @@
-I built SourceSpool, a Windows terminal app for organizing saved video and audio references.
+I’ve released SourceSpool v0.2.0, a Windows terminal library for saved video and audio references.
 
-Keep a source link with each item, add tags and notes, and search them later. It also has collections, filename previews, duplicate prompts and metadata import/export.
+You can now launch it with:
+npx sourcespool
 
-v0.1.0 is open source under MIT. This is a source release for Windows 11 x64 and requires Node 24, yt-dlp and FFmpeg.
+Or install it permanently:
+npm install -g sourcespool
+sourcespool
 
-Inspired by Yoinks. The attached images show captured production terminal output using an original local sample.
+Keep a source link with each item, add tags and notes, and find it later. Collections, filename previews, duplicate choices and metadata import/export are included.
+
+Requires Windows 11 x64 and Node 24 (24.19.0 or later in the Node 24 line). First run reuses working tools or offers verified yt-dlp/FFmpeg setup. Fresh tools download about 133 MB; existing verified downloads can be reused offline.
+
+The app is MIT licensed; external tools retain their own licenses. Inspired by Yoinks. Existing workflow images use original local samples captured in v0.1.0 and illustrate the library, not the new installation flow. Metadata exports do not include media files.
 
 Code and setup: https://github.com/JustinReyes28/sourcespool
-Release: https://github.com/JustinReyes28/sourcespool/releases/tag/v0.1.0
+Package: https://www.npmjs.com/package/sourcespool
+Release: https://github.com/JustinReyes28/sourcespool/releases/tag/v0.2.0

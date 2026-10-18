@@ -1,17 +1,19 @@
-# SourceSpool v0.1.0 posting kit
+# SourceSpool v0.2.0 posting kit
 
-Prepared 18 October 2026, Asia/Singapore. The owner will post online independently. Captions and image files are the Phase 5 deliverable; collecting feedback and maintaining later releases are outside this phase.
+Handoff status: stable npm publication is readable and final hosted verification passed; PR merge and GitHub release publication remain pending. Hold social posting until the handoff is marked complete.
 
-[Download the complete posting kit ZIP](https://github.com/JustinReyes28/sourcespool/raw/refs/heads/main/docs/launch-kit/sourcespool-v0.1.0-posting-kit.zip) (about 0.47 MB): captions, seven PNGs and the optional demo video.
+Prepared 18 October 2026, Asia/Singapore. The owner publishes independently. This kit covers the npm release; no social account access or posting is required.
+
+[Download the posting-kit ZIP](https://github.com/JustinReyes28/sourcespool/raw/refs/heads/main/docs/launch-kit/sourcespool-v0.2.0-posting-kit.zip). The historical [v0.1.0 ZIP](sourcespool-v0.1.0-posting-kit.zip) remains available separately.
 
 ## Copy to paste
 
-- [General caption](general.txt): a product introduction for a longer social post.
-- [Reddit title and body](reddit.txt): paste the title and body into their separate fields; omit the TITLE/BODY labels.
-- [X caption](x.txt): a short introduction with the repository link.
-- [LinkedIn caption](linkedin.txt): the workflow and release details.
+- [General caption](general.txt)
+- [Reddit title and body](reddit.txt): paste the title/body into separate fields and omit the labels.
+- [X caption](x.txt): 211 weighted characters with the URL counted as 23 characters.
+- [LinkedIn caption](linkedin.txt)
 
-Each file contains plain text and real links. Captions credit Yoinks and describe released behavior. Choose the caption and attachments, then publish from your own account when ready.
+The captions introduce npx sourcespool and npm install -g sourcespool. Requirements: Windows 11 x64, local NTFS and Node >=24.19.0 <25. First run checks tools and offers explicit verified setup; fresh tool artifacts require about 132.6 MB, while existing verified downloads can be reused with --setup --tool-cache. Node installation and ordinary npm package/dependency transfers are additional for a fresh user. The app package does not bundle external tool binaries.
 
 ## Attachments
 
@@ -26,7 +28,7 @@ For one image, use [note search](../demo/04-search.png), which shows why the lib
 
 Alternative: [03-saved-light.png](../demo/03-saved-light.png).
 
-All seven PNGs are 1280 × 720 and total about 0.30 MB. Keep the footer visible: these are annotated renders of actual production Ink terminal text, using an original local sample. Absolute library/export paths are redacted. They are not desktop screenshots or evidence that a particular external platform works. No media or tools were downloaded to assemble this kit. [Capture details](../demo/README.md).
+These are historical v0.1.0 workflow captures. All seven PNGs are 1280 × 720 and total about 0.30 MB. Keep the footer visible: these are annotated renders of actual production Ink terminal text, using an original local sample. Absolute library/export paths are redacted. They are not desktop screenshots or evidence that a particular external platform works. No media or tools were downloaded to assemble this kit. [Capture details](../demo/README.md).
 
 The [existing 30-second video](../demo/sourcespool-demo.mp4) is optional and is included in the posting-kit ZIP. Its five-second holds are editorial timing, not a download-speed measurement.
 
@@ -42,8 +44,10 @@ The [existing 30-second video](../demo/sourcespool-demo.mp4) is optional and is 
 
 ## Release and credit
 
-[Repository and setup](https://github.com/JustinReyes28/sourcespool) · [v0.1.0 source release](https://github.com/JustinReyes28/sourcespool/releases/tag/v0.1.0).
+[Repository and setup](https://github.com/JustinReyes28/sourcespool) · [npm package](https://www.npmjs.com/package/sourcespool) · [v0.2.0 release](https://github.com/JustinReyes28/sourcespool/releases/tag/v0.2.0) · [Installation evidence](https://github.com/JustinReyes28/sourcespool/blob/main/docs/installation-phase-5.5.md).
 
-Windows 11 x64 and Node 24 are the tested environment. yt-dlp and FFmpeg are required separately. SourceSpool is MIT licensed; external tools retain their own licenses. [Yoinks](https://github.com/pablostanley/yoinks) inspired the terminal download concept; SourceSpool's application code, workflow, copy, captures and sample media are original.
+SourceSpool's application is MIT licensed; yt-dlp/FFmpeg and other dependencies retain their licenses. [Yoinks](https://github.com/pablostanley/yoinks) inspired the terminal concept. Application code, workflow, copy, sample media and captures are original.
 
-The demo uses localhost media. Live YouTube, Facebook, X and Instagram availability has not been qualified in this release. Independent usability testing and problem-study interviews remain deferred. Full setup and limitations are in the repository README.
+Images/video are reused historical v0.1.0 workflow illustrations. They do not show the new npm installation screens or establish live YouTube/Facebook/X/Instagram compatibility. Keep their original version/capture provenance visible. Independent user research remains deferred. Metadata exports contain no media. The README records the remaining platform/source limitations.
+
+Existing local assets were reused to assemble this kit. No media, tool binaries or design packages were downloaded for it. The owner handles social publication; feedback collection and continuing maintenance are outside this handoff.

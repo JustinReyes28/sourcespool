@@ -10,3 +10,7 @@ Checked 12 October 2026, Asia/Singapore. Scope: exact quoted web searches, GitHu
 - **SourceSpool — selected working name.** Exact quoted searches returned technical uses of the separate phrase “sources pool”, but no matching product was found. GitHub REST search `sourcespool in:name` returned `total_count: 0`. Authenticated lookup of `JustinReyes28/sourcespool` returned 404 before creation. These observations establish a checked working name and an available owner/repository pair at that moment; they do not prove universal availability.
 
 Public repository choice was explicitly supplied by the user. Owner is the verified signed-in GitHub account, JustinReyes28. Repository name: `sourcespool`. Original identity uses a reference-slip layout: source, reason, collection and path presented as one record; restrained text/bold hierarchy in the terminal, no upstream logo, copied screenshot or copied composition.
+
+## Public identity alignment — 18 October 2026
+
+The owner confirmed retaining **SourceSpool**. The GitHub repository, which had been named ClipShelf, was renamed to [JustinReyes28/sourcespool](https://github.com/JustinReyes28/sourcespool). Its repository ID remains 1415471727. The npm package and CLI command already use `sourcespool`. Current documentation, captions, posting-kit archive and checkout remote now use the canonical repository name. Earlier ClipShelf concept notes and third-party naming evidence remain historical records.

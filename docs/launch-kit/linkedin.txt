@@ -1,12 +1,13 @@
-I've released SourceSpool v0.1.0, a Windows terminal app for keeping media references organized.
+I’ve released SourceSpool v0.2.0 with npm installation.
 
-The workflow keeps the context with the file. Save a clip, keep its source URL, add tags and a note, then search those details when you need it again. In the attached example, searching "reflections" finds a clip through its note.
+Run npx sourcespool to launch it, or npm install -g sourcespool for a permanent installation. It requires Windows 11 x64 and Node 24, starting at 24.19.0.
 
-The release includes collections, filename previews, duplicate prompts and JSON metadata import/export. Media stays in a local library; metadata exports don't contain the media files.
+SourceSpool keeps the context with a saved media reference: source URL, collection, tags and notes. Search those details later, review filenames before saving, choose what to do with duplicates, and import/export catalogue metadata. Media files need their own backup.
 
-It's MIT licensed and tested on Windows 11 x64, with Node 24, yt-dlp and FFmpeg required. This is a source release.
+First run checks existing tools and offers verified yt-dlp/FFmpeg setup if needed. Fresh tools download about 133 MB; existing verified downloads can be reused without another transfer. Setup and app updates preserve the separate media library.
 
-Yoinks inspired the terminal download workflow. The code, sample media and captures are original. The images show captured production terminal output from a locally served sample.
+The app is MIT licensed; external tools retain their licenses. Yoinks inspired the terminal workflow. The code and sample media are original. Attached historical v0.1.0 captures use a locally served sample and illustrate the library workflow, not the npm installation screens or external-site compatibility.
 
 Code and setup: https://github.com/JustinReyes28/sourcespool
-Release: https://github.com/JustinReyes28/sourcespool/releases/tag/v0.1.0
+Package: https://www.npmjs.com/package/sourcespool
+Release: https://github.com/JustinReyes28/sourcespool/releases/tag/v0.2.0
