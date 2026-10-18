@@ -1,5 +1,5 @@
 {
-  "status": "stable npm publication and final hosted verification complete; PR merge and GitHub release pending",
+  "status": "implementation, local qualification, stable npm publication, hosted verification and PR #5 merge complete; GitHub v0.2.0 release pending",
   "checkedAt": "2026-10-18T08:39:06.460Z",
   "environment": {
     "local": "Windows 11 x64 build 26200 / PowerShell ConPTY",
@@ -86,7 +86,11 @@
   "publication": {
     "prerelease": "0.2.0-rc.1 accepted and publicly readable; integrity matches local artifact",
     "stable": "0.2.0 publicly readable; latest=0.2.0; SHA-512 matches tested tarball",
-    "pullRequest": "https://github.com/JustinReyes28/sourcespool/pull/5"
+    "pullRequest": "https://github.com/JustinReyes28/sourcespool/pull/5",
+    "pullRequestState": "MERGED",
+    "pullRequestMergedAt": "2026-10-18T09:11:42Z",
+    "githubReleaseStatus": "v0.2.0 release not found",
+    "verifiedAt": "2026-10-18T09:35:37.928Z"
   },
   "cellular": {
     "runtimeTarballsReused": 41,
@@ -99,9 +103,9 @@
     "excluded": "ChatGPT/app traffic and unrelated updates"
   },
   "postingKit": {
-    "bytes": 451593,
-    "sha256": "1e6b46f13a513c35a9323358d305e61318203b549acd8881efcfca59a719bb20",
-    "status": "README and captions simplified; current checkout workflow recaptured; publication hold retained",
+    "bytes": 451597,
+    "sha256": "ad696e475bba6ba1a48f65c293d86b2ad45485c1cf784fa553989dca5d7412fd",
+    "status": "README and captions simplified; current checkout workflow recaptured; npm availability and PR #5 merge verified; GitHub v0.2.0 release pending",
     "captureVersion": "0.2.0",
     "recordedAt": "2026-10-18T09:29:05.674Z",
     "checks": [

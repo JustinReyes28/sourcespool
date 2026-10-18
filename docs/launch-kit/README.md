@@ -2,7 +2,7 @@
 
 Captions and workflow assets for the npm release. The images and video were recorded again from the v0.2.0 development checkout on 18 October 2026.
 
-The latest recorded release status is: npm publication and hosted verification passed; PR merge and GitHub release publication are pending. See [installation evidence](https://github.com/JustinReyes28/sourcespool/blob/main/docs/installation-phase-5.5.md). Check that status before using a release announcement. Social posting stays with the owner.
+Verified on 18 October 2026: v0.2.0 is available on npm, hosted verification passed, and PR #5 is merged. The GitHub v0.2.0 release has not been published. The captions announce npm availability; social posting stays with the owner. [Installation evidence](https://github.com/JustinReyes28/sourcespool/blob/main/docs/installation-phase-5.5.md).
 
 [Download the posting-kit ZIP](sourcespool-v0.2.0-posting-kit.zip).
 
