@@ -2,7 +2,7 @@
 
 A Windows terminal library for saving permitted media references, keeping their source and context, and finding them again.
 
-Released: [v0.1.0](https://github.com/JustinReyes28/ClipShelf/releases/tag/v0.1.0) · source archive about 0.62 MB.
+Version **0.2.0** adds npm installation and verified tool setup. [npm package](https://www.npmjs.com/package/sourcespool) · [Release history](https://github.com/JustinReyes28/ClipShelf/releases).
 
 Real downloading, saved collections, tags, notes, search, naming templates, duplicate choices and metadata import/export are implemented. The original synthetic design demo remains separate.
 
@@ -12,20 +12,20 @@ Real downloading, saved collections, tags, notes, search, naming templates, dupl
 
 ## Install and start
 
-**v0.2.0 npm release candidate is being qualified.** The existing [v0.1.0 source release](https://github.com/JustinReyes28/ClipShelf/releases/tag/v0.1.0) remains available. Use the npm candidate command only after its publication is recorded in [installation evidence](https://github.com/JustinReyes28/ClipShelf/blob/main/docs/installation-phase-5.5.md).
+Install the compiled CLI from npm. The historical [v0.1.0 source release](https://github.com/JustinReyes28/ClipShelf/releases/tag/v0.1.0) remains available. [Installation evidence](https://github.com/JustinReyes28/ClipShelf/blob/main/docs/installation-phase-5.5.md) records the local and hosted qualification scope.
 
 Supported: **Windows 11 x64, local NTFS storage, Node >=24.19.0 <25**. Install [Node 24](https://nodejs.org/en/download) first. Other platforms and Node 25 are outside the qualified range.
 
-Run the candidate:
+Launch:
 
 ~~~powershell
-npx sourcespool@next
+npx sourcespool
 ~~~
 
 Or install it permanently:
 
 ~~~powershell
-npm install -g sourcespool@next
+npm install -g sourcespool
 sourcespool
 ~~~
 
@@ -72,7 +72,7 @@ SOURCESPOOL_YTDLP and SOURCESPOOL_FFMPEG are supported. --check-tools reports re
 
 ### Update, uninstall and troubleshooting
 
-After stable publication, use npx sourcespool@latest or npm install -g sourcespool@latest. Plain npx can use an installed/cached version; check sourcespool --version and use an exact published version for reproducible runs.
+Update with npx sourcespool@latest or npm install -g sourcespool@latest. Plain npx can use an installed/cached version; check sourcespool --version and use an exact published version for reproducible runs.
 
 ~~~powershell
 npm uninstall -g sourcespool
