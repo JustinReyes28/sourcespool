@@ -51,11 +51,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JustinReyes28/sourcespool.git"
+    "url": "git+https://github.com/JustinReyes28/ClipShelf.git"
   },
-  "homepage": "https://github.com/JustinReyes28/sourcespool#readme",
+  "homepage": "https://github.com/JustinReyes28/ClipShelf#readme",
   "bugs": {
-    "url": "https://github.com/JustinReyes28/sourcespool/issues"
+    "url": "https://github.com/JustinReyes28/ClipShelf/issues"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",

@@ -45,6 +45,7 @@ export async function runProduction(args: string[], options: { onFirstPaint?: (c
   let saved = null;
   try { saved = await readSettings(); } catch (error) { if (!option('--library') && !args.includes('--check-tools') && !args.includes('--setup')) throw error; }
   if (args.includes('--download-tools') && !args.includes('--setup')) throw new UserError('Use --setup --download-tools to explicitly install tools.');
+  if ((args.includes('--repair') || option('--tool-cache')) && !args.includes('--setup')) throw new UserError('Use --setup with --repair or --tool-cache.');
   if (args.includes('--setup') && args.includes('--check-tools')) throw new UserError('Choose --setup or --check-tools.');
   const setup = async () => {
     const abort = new AbortController(); const cancel = () => abort.abort(); process.once('SIGINT', cancel); process.once('SIGTERM', cancel);

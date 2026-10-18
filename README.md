@@ -2,17 +2,17 @@
 
 A Windows terminal library for saving permitted media references, keeping their source and context, and finding them again.
 
-Released: [v0.1.0](https://github.com/JustinReyes28/sourcespool/releases/tag/v0.1.0) · source archive about 0.62 MB.
+Released: [v0.1.0](https://github.com/JustinReyes28/ClipShelf/releases/tag/v0.1.0) · source archive about 0.62 MB.
 
 Real downloading, saved collections, tags, notes, search, naming templates, duplicate choices and metadata import/export are implemented. The original synthetic design demo remains separate.
 
-![A reference saved and verified in the production app](https://raw.githubusercontent.com/JustinReyes28/sourcespool/main/docs/demo/03-saved.png)
+![A reference saved and verified in the production app](https://raw.githubusercontent.com/JustinReyes28/ClipShelf/main/docs/demo/03-saved.png)
 
-[30-second workflow](https://github.com/JustinReyes28/sourcespool/blob/main/docs/demo/sourcespool-demo.mp4) · [Capture details](https://github.com/JustinReyes28/sourcespool/blob/main/docs/demo/README.md) · [Posting captions and images](https://github.com/JustinReyes28/sourcespool/blob/main/docs/launch-kit/README.md) · [Release downloads and checksums](https://github.com/JustinReyes28/sourcespool/releases) · [Validation evidence](https://github.com/JustinReyes28/sourcespool/blob/main/docs/validation-phase-3-4.md)
+[30-second workflow](https://github.com/JustinReyes28/ClipShelf/blob/main/docs/demo/sourcespool-demo.mp4) · [Capture details](https://github.com/JustinReyes28/ClipShelf/blob/main/docs/demo/README.md) · [Posting captions and images](https://github.com/JustinReyes28/ClipShelf/blob/main/docs/launch-kit/README.md) · [Release downloads and checksums](https://github.com/JustinReyes28/ClipShelf/releases) · [Validation evidence](https://github.com/JustinReyes28/ClipShelf/blob/main/docs/validation-phase-3-4.md)
 
 ## Install and start
 
-**v0.2.0 npm release candidate is being qualified.** The existing [v0.1.0 source release](https://github.com/JustinReyes28/sourcespool/releases/tag/v0.1.0) remains available. Use the npm candidate command only after its publication is recorded in [installation evidence](https://github.com/JustinReyes28/sourcespool/blob/main/docs/installation-phase-5.5.md).
+**v0.2.0 npm release candidate is being qualified.** The existing [v0.1.0 source release](https://github.com/JustinReyes28/ClipShelf/releases/tag/v0.1.0) remains available. Use the npm candidate command only after its publication is recorded in [installation evidence](https://github.com/JustinReyes28/ClipShelf/blob/main/docs/installation-phase-5.5.md).
 
 Supported: **Windows 11 x64, local NTFS storage, Node >=24.19.0 <25**. Install [Node 24](https://nodejs.org/en/download) first. Other platforms and Node 25 are outside the qualified range.
 
@@ -41,7 +41,7 @@ Reuse downloads you already have (the pinned yt-dlp.exe and ffmpeg.zip):
 sourcespool --setup --tool-cache "C:/Downloads/SourceSpool-tools"
 ~~~
 
-The current verified artifacts are yt-dlp 2026.08.19 and Gyan FFmpeg 9.0.2 Essentials. Their hashes are pinned in the app and recorded in [tool provenance](https://github.com/JustinReyes28/sourcespool/blob/main/docs/tool-provenance.md). A missing or mismatched cache file fails without an online fallback. This developer checkout already has them in .tmp/tools; ordinary new users need their own files or the explicit download option.
+The current verified artifacts are yt-dlp 2026.08.19 and Gyan FFmpeg 9.0.2 Essentials. Their hashes are pinned in the app and recorded in [tool provenance](https://github.com/JustinReyes28/ClipShelf/blob/main/docs/tool-provenance.md). A missing or mismatched cache file fails without an online fallback. This developer checkout already has them in .tmp/tools; ordinary new users need their own files or the explicit download option.
 
 Run **sourcespool --setup** for guided setup. It shows the download hosts, versions, destination and license links before asking to install. An explicit noninteractive download is also available:
 
@@ -95,7 +95,7 @@ npm start
 
 Offline install requires a populated cache for the checked-in lockfile. New contributors without a cache can run npm ci on a suitable connection. The tool-cache command requires the verified artifacts; it never fetches missing files. The optional npm run tools:install wrapper uses the same installer after a build.
 
-Android APK support remains [planned separately](https://github.com/JustinReyes28/sourcespool/blob/main/PLAN-06-Android-Support.md).
+Android APK support remains [planned separately](https://github.com/JustinReyes28/ClipShelf/blob/main/PLAN-06-Android-Support.md).
 
 ## Use the library
 
@@ -111,11 +111,11 @@ Android APK support remains [planned separately](https://github.com/JustinReyes2
 
 ## Data, recovery and limits
 
-The library contains catalogue.json, its last valid backup, collection folders, per-job staging and recovery journals. A completed record is stored only after nonempty media is hashed and the final file is observed. JSON updates use a single writer lock, revision checks, flushed temporary files and same-volume replacement. Use Recover before manually changing a lock or pending journal. [Storage contract](https://github.com/JustinReyes28/sourcespool/blob/main/docs/architecture.md).
+The library contains catalogue.json, its last valid backup, collection folders, per-job staging and recovery journals. A completed record is stored only after nonempty media is hashed and the final file is observed. JSON updates use a single writer lock, revision checks, flushed temporary files and same-volume replacement. Use Recover before manually changing a lock or pending journal. [Storage contract](https://github.com/JustinReyes28/ClipShelf/blob/main/docs/architecture.md).
 
 Missing media keeps its source and metadata. Restore it at the expected relative path; verified relinking is deferred. Source URLs can be private, so review an export before sharing it. The app uploads no catalogue, media, credentials or cookies.
 
-The current release excludes playlists, authenticated/cookie sources, cloud sync, accounts, transcripts, automatic tool updates and non-Windows support. Network shares and cloud-synced folders are untested. File opening is limited to common audio/video extensions and rechecks the stored hash. Public-source availability depends on yt-dlp and the site; recorded real-media checks use original locally served fixtures. Human research status and the approved solo-release gate are documented in [validation](https://github.com/JustinReyes28/sourcespool/blob/main/docs/validation-phase-3-4.md). No screen-reader compatibility claim is made from keyboard tests alone.
+The current release excludes playlists, authenticated/cookie sources, cloud sync, accounts, transcripts, automatic tool updates and non-Windows support. Network shares and cloud-synced folders are untested. File opening is limited to common audio/video extensions and rechecks the stored hash. Public-source availability depends on yt-dlp and the site; recorded real-media checks use original locally served fixtures. Human research status and the approved solo-release gate are documented in [validation](https://github.com/JustinReyes28/ClipShelf/blob/main/docs/validation-phase-3-4.md). No screen-reader compatibility claim is made from keyboard tests alone.
 
 ## Develop and verify
 
@@ -128,14 +128,14 @@ npm run test:integration
 
 The check command typechecks source/scripts/tests, runs behavioral and keyboard tests, builds the CLI, and regenerates the separate synthetic design gallery. Integration tests require explicitly installed tools. They generate original video/audio, download it over loopback HTTP, exercise FFmpeg merging, stop a real Windows process tree, and forcibly interrupt a writer before recovery. Windows CI runs both suites.
 
-[Production measurements](https://github.com/JustinReyes28/sourcespool/blob/main/docs/production-baseline.json) distinguish first paint, tool readiness, JSON I/O, search and installed footprint. The original phase 2 baseline remains a dated, narrower measurement.
+[Production measurements](https://github.com/JustinReyes28/ClipShelf/blob/main/docs/production-baseline.json) distinguish first paint, tool readiness, JSON I/O, search and installed footprint. The original phase 2 baseline remains a dated, narrower measurement.
 
 Production boundaries: terminal views → application controller/coordinator → domain validation/naming → local-library/downloader/opener adapters. UI code performs no process spawning or filesystem writes. The simulator and original 16 design sketches are retained as design references; run **npm run demo** or **node dist/cli.js --snapshot home**.
 
 ## Plans and credits
 
-[Product](https://github.com/JustinReyes28/sourcespool/blob/main/PLAN-01-Product-and-Differentiation.md) · [Design](https://github.com/JustinReyes28/sourcespool/blob/main/PLAN-02-Design-Architecture-and-GitHub.md) · [Build](https://github.com/JustinReyes28/sourcespool/blob/main/PLAN-03-Build-and-Improve.md) · [Validate/release](https://github.com/JustinReyes28/sourcespool/blob/main/PLAN-04-Validation-and-GitHub-Release.md) · [Posting kit](https://github.com/JustinReyes28/sourcespool/blob/main/PLAN-05-Marketing-and-Maintenance.md) · [Easy installation plan](https://github.com/JustinReyes28/sourcespool/blob/main/PLAN-05.5-Easy-Installation-and-npm-Release.md) · [Android plan](https://github.com/JustinReyes28/sourcespool/blob/main/PLAN-06-Android-Support.md) · [Execution evidence](https://github.com/JustinReyes28/sourcespool/blob/main/docs/execution-status.md)
+[Product](https://github.com/JustinReyes28/ClipShelf/blob/main/PLAN-01-Product-and-Differentiation.md) · [Design](https://github.com/JustinReyes28/ClipShelf/blob/main/PLAN-02-Design-Architecture-and-GitHub.md) · [Build](https://github.com/JustinReyes28/ClipShelf/blob/main/PLAN-03-Build-and-Improve.md) · [Validate/release](https://github.com/JustinReyes28/ClipShelf/blob/main/PLAN-04-Validation-and-GitHub-Release.md) · [Posting kit](https://github.com/JustinReyes28/ClipShelf/blob/main/PLAN-05-Marketing-and-Maintenance.md) · [Easy installation plan](https://github.com/JustinReyes28/ClipShelf/blob/main/PLAN-05.5-Easy-Installation-and-npm-Release.md) · [Android plan](https://github.com/JustinReyes28/ClipShelf/blob/main/PLAN-06-Android-Support.md) · [Execution evidence](https://github.com/JustinReyes28/ClipShelf/blob/main/docs/execution-status.md)
 
-[Yoinks](https://github.com/pablostanley/yoinks) by Pablo Stanley inspired the approachable terminal downloader concept. SourceSpool's code, collection workflow, copy, captures and sample media are original; no Yoinks source/assets were copied. [Comparison and provenance](https://github.com/JustinReyes28/sourcespool/blob/main/docs/research/comparison-and-provenance.md).
+[Yoinks](https://github.com/pablostanley/yoinks) by Pablo Stanley inspired the approachable terminal downloader concept. SourceSpool's code, collection workflow, copy, captures and sample media are original; no Yoinks source/assets were copied. [Comparison and provenance](https://github.com/JustinReyes28/ClipShelf/blob/main/docs/research/comparison-and-provenance.md).
 
-Original application code is [MIT licensed](https://github.com/JustinReyes28/sourcespool/blob/main/LICENSE). React/Ink and all external tools keep their own licenses. [Contributing](https://github.com/JustinReyes28/sourcespool/blob/main/CONTRIBUTING.md).
+Original application code is [MIT licensed](https://github.com/JustinReyes28/ClipShelf/blob/main/LICENSE). React/Ink and all external tools keep their own licenses. [Contributing](https://github.com/JustinReyes28/ClipShelf/blob/main/CONTRIBUTING.md).

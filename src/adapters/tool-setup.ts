@@ -96,7 +96,7 @@ export async function installTools(options: InstallOptions = {}): Promise<ToolPa
     signal.throwIfAborted(); const stagedPaths = { ytDlp: path.join(stage, 'yt-dlp.exe'), ffmpeg: path.join(stage, 'ffmpeg.exe') };
     progress('Checking yt-dlp, FFmpeg and ffprobe…'); await new YtDlpDownloader(stagedPaths).check(signal);
     const hashes: Record<string, string> = {}; for (const file of files) hashes[file] = await sha256(path.join(stage, file), signal);
-    await fs.unlink(archive); await removeOwned(path.join(stage, prefix), stage);
+    await fs.unlink(archive); await removeOwned(path.join(stage, prefix, 'bin'), stage); // Retain upstream docs, licenses and build notices.
     const manifest: Manifest = { schemaVersion: 1, release, versions: { ytDlp: toolSpec.ytDlp.version, ffmpeg: toolSpec.ffmpeg.version }, hashes, origins: toolSpec };
     await fs.writeFile(path.join(stage, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n', { flag: 'wx' });
     signal.throwIfAborted();

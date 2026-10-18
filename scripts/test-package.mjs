@@ -51,6 +51,7 @@ if (process.argv.includes('--tools')) {
   await npm(['install', '-g', tarball, '--prefix', prefix, '--ignore-scripts', '--no-audit', '--no-fund', ...network]);
   await execute(['--check-tools']);
 }
-const evidence = { testedAt: new Date().toISOString(), version: packed.version, node: process.version, platform: process.platform, os: (await import('node:os')).release(), networkMode: online ? 'hosted clean online' : 'local offline cache', packageBytes: packed.size, sha256: createHash('sha256').update(await fs.readFile(tarball)).digest('hex'), files: names, artifact: path.relative(root, tarball), globalInstall: 'pass', npx: 'pass', lifecycleScriptsDisabled: true, toolSetup: process.argv.includes('--tools') ? 'pass' : 'not requested', registryPackage: registryPackage ?? null, workDirectory: path.relative(root, work) };
+const releaseCommit = (await run('git', ['-c', 'safe.directory=' + root, 'rev-parse', 'HEAD'], { cwd: root })).stdout.trim();
+const evidence = { releaseCommit, testedAt: new Date().toISOString(), version: packed.version, node: process.version, platform: process.platform, os: (await import('node:os')).release(), networkMode: online ? 'hosted clean online' : 'local offline cache', packageBytes: packed.size, sha256: createHash('sha256').update(await fs.readFile(tarball)).digest('hex'), files: names, artifact: path.relative(root, tarball), globalInstall: 'pass', npx: 'pass', lifecycleScriptsDisabled: true, toolSetup: process.argv.includes('--tools') ? 'pass' : 'not requested', registryPackage: registryPackage ?? null, workDirectory: path.relative(root, work) };
 await fs.writeFile(path.join(base, 'phase55-package-evidence.json'), JSON.stringify(evidence, null, 2) + '\n');
 console.log(JSON.stringify(evidence, null, 2));
