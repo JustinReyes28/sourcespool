@@ -2,7 +2,7 @@
 
 Inspiration: Yoinks. Prepared 12 October 2026 (Asia/Singapore).
 
-This folder contains the five phase files for this project, from product definition through implementation, GitHub publishing, Reddit/X/LinkedIn marketing using browser computer use, and maintenance. Plans 1 and 2 are complete; see [current evidence](docs/execution-status.md) and the [verified public repository](https://github.com/JustinReyes28/sourcespool). The folder contains an early design prototype; the README describes its limits. Production build, public release and marketing remain phases 3–5.
+This folder contains the five phase files for this project, from product definition through implementation, GitHub publishing, Reddit/X/LinkedIn marketing using browser computer use, and maintenance. Plans 1–4 are complete under the owner-approved solo-validation gate; see [execution evidence](docs/execution-status.md), the [public repository](https://github.com/JustinReyes28/sourcespool) and [v0.1.0 release](https://github.com/JustinReyes28/sourcespool/releases/tag/v0.1.0). The production app and separate design prototype are included. Interviews remain deferred with assumptions explicitly unvalidated. Phase 5 marketing and maintenance remains pending.
 
 [Repository inspiration](Repo-Inspiration-2026-10-12.md) · [Public README](README.md) · [Reference notes](INSPIRATION-REFERENCE.md)
 
@@ -14,7 +14,7 @@ This folder contains the five phase files for this project, from product definit
 4. Validate and release: test the actual product, run a small beta, and verify a versioned GitHub release.
 5. Market and maintain: use observed browser controls for the agreed Reddit, X, and LinkedIn launch, then support the release.
 
-Build dates remain unset. Complete the five phases in order using their completion gates. Check the product name and select the GitHub owner and repository URL during implementation. Public release is the intended outcome; the development visibility can be decided during setup.
+Execution dates and approved gate amendments are recorded in the execution log. Continue phase 5 using its completion gate. Check the product name and select the GitHub owner and repository URL during implementation. Public release is the intended outcome; the development visibility can be decided during setup.
 
 ## Yoinks → SourceSpool
 
@@ -32,7 +32,7 @@ This project specifies three distinct capabilities, improvements to the core exp
 
 ## Publication boundaries
 
-These phase plans originally scoped documentation only. The folder now also contains a design scaffold; consult the README for the current implementation status. Social copy remains draft material and must match the eventual released behaviour. Real publishing requires the correct user account, final destination, demonstrated feature claims, and the appropriate user authorisation when execution is requested.
+These phase plans originally scoped documentation only. The folder now contains the released production implementation and a separate design scaffold; consult the README for current behavior. Social copy remains draft material and must match the eventual released behaviour. Real publishing requires the correct user account, final destination, demonstrated feature claims, and the appropriate user authorisation when execution is requested.
 
 ## Checked reference sources
 

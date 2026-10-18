@@ -41,5 +41,36 @@
     "independentBeta": "replaced by documented solo gate with explicit owner approval",
     "productAssumptions": "unvalidated"
   },
-  "publication": "Exact release commit, CI and artifact verification are recorded in execution-status.md after publication"
+  "publication": {
+    "url": "https://github.com/JustinReyes28/sourcespool/releases/tag/v0.1.0",
+    "tag": "v0.1.0",
+    "sourceCommit": "6085ac9e195baa5aaaa4f1e2158d9d1f9b0c9b76",
+    "annotatedTagObject": "234e93fb6e321b6bc0aa56cdff3bab2b80d9acc0",
+    "publishedAt": "2026-10-18T05:55:58Z",
+    "sourceArchive": {
+      "name": "sourcespool-0.1.0-windows-x64-source.zip",
+      "bytes": 617914,
+      "sha256": "9cb7985269ac2894e76be92b6099bd780ac1be67fe397c6b04056a6a0a8eeede",
+      "githubAssetDigestMatches": true,
+      "anonymousHeadStatus": 200,
+      "bodyDownloadedForVerification": false
+    },
+    "externalToolsBundled": false
+  },
+  "cleanCheckout": {
+    "sourceCommit": "6085ac9e195baa5aaaa4f1e2158d9d1f9b0c9b76",
+    "install": "npm ci --offline --cache <existing project cache> --no-audit --no-fund",
+    "networkDownloads": 0,
+    "behaviorAndKeyboardTests": 33,
+    "realToolTests": 6,
+    "failed": 0,
+    "skipped": 0,
+    "toolVersionsChecked": true,
+    "workingTreeClean": true
+  },
+  "ci": {
+    "url": "https://github.com/JustinReyes28/sourcespool/actions/runs/39102078735",
+    "sourceCommit": "6085ac9e195baa5aaaa4f1e2158d9d1f9b0c9b76",
+    "conclusion": "success"
+  }
 }

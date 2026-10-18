@@ -2,6 +2,8 @@
 
 A Windows terminal library for saving permitted media references, keeping their source and context, and finding them again.
 
+Released: [v0.1.0](https://github.com/JustinReyes28/sourcespool/releases/tag/v0.1.0) · source archive about 0.62 MB.
+
 Real downloading, saved collections, tags, notes, search, naming templates, duplicate choices and metadata import/export are implemented. The original synthetic design demo remains separate.
 
 ![A reference saved and verified in the production app](docs/demo/03-saved.png)

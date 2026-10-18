@@ -31,3 +31,25 @@ Date: 12 October 2026, Asia/Singapore. User request: execute Plans 1 and 2 with 
 ## Work outside the original phase 1/2 goal (12 October)
 
 Plans 3–5 remain unexecuted: production downloader/catalogue, release validation, user beta, social publication and maintenance. The phase 2 simulator does not demonstrate working production media features. There is no npm publication, versioned release or social post.
+
+## Phase 3 — complete (18 October 2026)
+
+- Implemented real yt-dlp/FFmpeg saves, file/hash verification, persistent local JSON collections/settings, notes/tags/search, Windows opening, naming previews, exact duplicate choices, metadata import/export and missing-file guidance.
+- Added locked atomic replacement/backup, no-overwrite file allocation, recovery journals, explicit stale-lock release, cancellation before commit and truthful exit during commit.
+- Full cursor editing, selection, help, small-terminal guards and paged long fields/details are qualified. The fixture demo stays separate.
+- Backend increment: [8cdc21e](https://github.com/JustinReyes28/sourcespool/commit/8cdc21e). Production UI and qualification: [1ddbcc4](https://github.com/JustinReyes28/sourcespool/commit/1ddbcc4). Final source release: [6085ac9](https://github.com/JustinReyes28/sourcespool/commit/6085ac9e195baa5aaaa4f1e2158d9d1f9b0c9b76).
+- The owner approved documented solo validation and explicitly deferred the problem-study interviews. Product assumptions remain unvalidated; no independent beta or interview outcomes are claimed.
+
+## Phase 4 — complete under the approved solo gate (18 October 2026)
+
+- Clean local checkout of the exact release commit passed npm ci --offline using the existing cache, all 33 behavior/keyboard tests, all six real-tool integration cases, build/gallery checks and CLI tool-version checks. The clean working tree remained unchanged. No internet package/tool/media download was needed for this clean build.
+- [Windows production CI](https://github.com/JustinReyes28/sourcespool/actions/runs/39102078735) succeeded on the exact release source commit. CI downloads occurred on GitHub runners.
+- All six actual Windows Terminal normal/SIGINT/error cases restored input/output modes in explicit ANSI light/dark colors. Separate real ConPTY key checks covered Q and Ctrl+C. [Exact host/input scope](terminal-verification.json).
+- [Recorded production captures](demo/README.md), original samples, [performance measurements](production-baseline.json), [tool provenance](tool-provenance.md) and [limitations](validation-phase-3-4.md) are included. Screenshots are annotated renders of actual Ink text; video timing is editorial.
+- Published and verified public [SourceSpool v0.1.0](https://github.com/JustinReyes28/sourcespool/releases/tag/v0.1.0). Annotated tag resolves to source commit 6085ac9e195baa5aaaa4f1e2158d9d1f9b0c9b76.
+- Source archive: 617,914 bytes (about 0.62 MB), SHA-256 9cb7985269ac2894e76be92b6099bd780ac1be67fe397c6b04056a6a0a8eeede. GitHub asset digest matches. Anonymous HEAD returned HTTP 200 and the expected length; the archive body was not downloaded for verification. BUILD-INFO.json and SHA256SUMS.txt are attached.
+- Original MIT attribution, upstream credit, external-tool licenses and publication exclusions were checked. No tool binary, installed dependency, private library, credential or npm publication is included.
+
+## Remaining scope
+
+Phase 5 launch and maintenance is unexecuted: no Reddit, X or LinkedIn post has been published. Interviews and independent usability research remain explicitly deferred follow-up, as approved by the owner.

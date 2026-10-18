@@ -44,7 +44,7 @@ The intended release destination is the public GitHub repository for this produc
 - Check that the audience can access the intended repository/release URL at the chosen visibility. Public marketing requires a reachable public destination or an explicitly described private beta route.
 - Replace provisional name/URL fields only after the actual account and final name are known.
 
-GitHub publishing is a required project outcome. The current plans do not perform an upload.
+GitHub publishing is a required project outcome. Version 0.1.0 is now published; tag, source, CI and asset verification are recorded in docs/execution-status.md.
 
 ## Demo and launch handoff
 
