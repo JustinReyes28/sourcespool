@@ -47,6 +47,7 @@ test('production keyboard journey writes a real catalogue, searches notes and ex
     await app.key('\r'); assert.match(await app.key('prism'), /Rain reflections/); assert.match(await app.key('\r'), /Reference details/);
     await app.key('\u001b'); await app.key('\u001b'); await app.key('e');
     const exported = path.join(temp.directory, 'keyboard-export.json'); await app.key(exported); await app.key('\r');
+    await act(async () => { await controller.waitForIdle(); });
     assert.equal(JSON.parse(await fs.readFile(exported, 'utf8')).items[0].notes, 'Remember the prism.');
   } finally { await app.close(); await temp.cleanup(); }
 });
